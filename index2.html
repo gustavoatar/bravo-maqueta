@@ -1,0 +1,155 @@
+
+<!doctype html>
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Maqueta</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+  <!-- scripts concatenated and minified via ant build script-->
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/libs/scrollbar.js"></script>
+	<style>
+		
+#scrollbar_container {
+	position:relative;
+	width:500px;
+}
+
+#scrollbar_track {
+	position:absolute;
+	top:0;
+	right:0;
+	height:100%;
+	width:10px;
+	background-color:transparent;
+	cursor:move;
+}
+
+#scrollbar_handle {
+	width:10px;
+	background-color:#5c92e7;
+	cursor:move;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	opacity:0.9;
+    -moz-opacity:0.9;
+}
+
+#scrollbar_content {
+	overflow:hidden;
+	width:485px;
+	height:250px;
+}
+
+	</style>
+
+  <script>
+  
+	$(function(){
+		
+		setSizes();
+
+		var scrollbar = new Control.ScrollBar('scrollbar_content','scrollbar_track');
+		
+	});
+	
+	$(window).resize(function() { setSizes(); });
+	
+	function setSizes() {
+   		var containerWidth = $("#container").width();
+   		var containerHeight = $("#container").height();
+
+   		$("#content").width(containerWidth - 210);
+   		$("#content").height(containerHeight - 350);
+
+   		//$(".slides_container div").width(containerWidth - 210);
+   		$(".slides_container_size").width(containerWidth - 410);
+
+
+   		
+	}
+  </script>
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	
+  <div id="container">
+  	<div class="header-space"></div>
+      <div id="header">      	
+      	<div id="header-right-space"></div>
+		<ul id="main-menu" class="links inline clearfix">
+			<li class="menu-365 active-trail first active"><a href="/quienes-somos" class="active-trail active">Su Agencia</a></li>
+			<li class="menu-366"><a href="/marketing">MKT Bravo</a></li>
+			<li class="menu-367"><a href="/arte-dise%C3%B1o">Creatividad y Diseño</a></li>
+			<li class="menu-368"><a href="/medios">Medios</a></li>
+			<li class="menu-369"><a href="/exterior">Exterior</a></li>
+			<li class="menu-370 last"><a href="/nuevas-tecnologias">Marketing Online</a></li>
+		</ul>
+    </div>
+    
+    <div id="main">
+
+    	<div id="sidebar">
+			<div class="wrapper">
+			    <a href="/node/12"> 
+			    <img id="descargame" src="http://www.bravopublicidad.es/contacto.png" width="99" border="0"><br>&nbsp;&nbsp;&nbsp;Contacto
+			    </a>
+			</div>
+		</div>
+
+		
+  		
+		<!--<div id="content">
+			
+			
+			<div id="scrollbar_track"><div id="scrollbar_handle"></div></div>
+			<div id="scrollbar_content">
+				<h3>Use the Mouse Wheel or Handle to Scroll</h3>
+				<p>Nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce consectetuer. Phasellus molestie, sem vel laoreet pretium, arcu arcu rutrum eros, ac mattis felis ante at orci. Vivamus vel mauris. Ut porttitor, nunc eu tincidunt gravida, orci odio luctus mi, id venenatis dui nunc sit amet turpis. Mauris urna nisl, feugiat a, ultrices id, ultrices et, est. Nam eu felis non tortor luctus congue. Mauris consequat malesuada augue. Donec eu nibh in libero tempor aliquet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque sapien erat, imperdiet tincidunt, vestibulum eget, fringilla vel, odio. Ut risus. Ut pretium neque ac velit. Vivamus diam. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In hac habitasse platea dictumst. Nunc luctus fringilla mi. Nunc ultrices nisi ac urna.</p>
+				<h3 id="second_subhead">Convallis Felis ac Massa Accumsan</h3>
+				<p id="repeat">Phasellus faucibus adipiscing quam. Maecenas gravida, diam sit amet mollis accumsan, risus diam ornare leo, non sollicitudin lorem mi vitae ante. In at mi. In vestibulum nunc eleifend justo. Nullam semper. Nulla venenatis ornare ipsum. Phasellus pharetra. Suspendisse molestie. Fusce porta vulputate quam. Etiam vitae tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas vulputate magna nec diam. Aliquam sagittis lectus a pede. Sed fermentum, risus non sollicitudin posuere, erat arcu iaculis nibh, eu faucibus sapien velit dapibus ipsum. Proin fringilla sapien sed dui.</p>
+				<h3 id="third_subhead">Eleifend Justo Nullam Semper</h3>
+				<p>Cras eros tellus, posuere at, condimentum eget, fringilla nec, lectus. Mauris ut enim. Quisque imperdiet rutrum elit. Curabitur in nunc. Sed pretium. Aliquam convallis. Proin venenatis. Proin sed magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc tincidunt. Nam vitae leo at urna dictum venenatis.</p>
+				<p>Cras iaculis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut nisl. Duis quis enim at justo euismod accumsan. Duis mollis. Curabitur sed ante. Morbi bibendum iaculis ligula. Suspendisse aliquet est. Sed velit orci, sagittis non, posuere vitae, aliquet in, massa. Vestibulum egestas.</p>
+			</div>
+			
+		</div> -->
+		
+		<div id="scrollbar_container">
+		<div id="scrollbar_track"><div id="scrollbar_handle"></div></div>
+		<div id="scrollbar_content">
+			<h3>Use the Mouse Wheel or Handle to Scroll</h3>
+			<p>Nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Fusce consectetuer. Phasellus molestie, sem vel laoreet pretium, arcu arcu rutrum eros, ac mattis felis ante at orci. Vivamus vel mauris. Ut porttitor, nunc eu tincidunt gravida, orci odio luctus mi, id venenatis dui nunc sit amet turpis. Mauris urna nisl, feugiat a, ultrices id, ultrices et, est. Nam eu felis non tortor luctus congue. Mauris consequat malesuada augue. Donec eu nibh in libero tempor aliquet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque sapien erat, imperdiet tincidunt, vestibulum eget, fringilla vel, odio. Ut risus. Ut pretium neque ac velit. Vivamus diam. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In hac habitasse platea dictumst. Nunc luctus fringilla mi. Nunc ultrices nisi ac urna.</p>
+			<h3 id="second_subhead">Convallis Felis ac Massa Accumsan</h3>
+			<p id="repeat">Phasellus faucibus adipiscing quam. Maecenas gravida, diam sit amet mollis accumsan, risus diam ornare leo, non sollicitudin lorem mi vitae ante. In at mi. In vestibulum nunc eleifend justo. Nullam semper. Nulla venenatis ornare ipsum. Phasellus pharetra. Suspendisse molestie. Fusce porta vulputate quam. Etiam vitae tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas vulputate magna nec diam. Aliquam sagittis lectus a pede. Sed fermentum, risus non sollicitudin posuere, erat arcu iaculis nibh, eu faucibus sapien velit dapibus ipsum. Proin fringilla sapien sed dui.</p>
+			<h3 id="third_subhead">Eleifend Justo Nullam Semper</h3>
+			<p>Cras eros tellus, posuere at, condimentum eget, fringilla nec, lectus. Mauris ut enim. Quisque imperdiet rutrum elit. Curabitur in nunc. Sed pretium. Aliquam convallis. Proin venenatis. Proin sed magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc tincidunt. Nam vitae leo at urna dictum venenatis.</p>
+			<p>Cras iaculis. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut nisl. Duis quis enim at justo euismod accumsan. Duis mollis. Curabitur sed ante. Morbi bibendum iaculis ligula. Suspendisse aliquet est. Sed velit orci, sagittis non, posuere vitae, aliquet in, massa. Vestibulum egestas.</p>
+		</div>
+	</div>
+  	</div>
+
+    <div class="push">
+    	<!-- stuff -->
+    </div>
+  </div> <!--! end of #container -->
+  <div class="footer">
+   	<!-- stuff -->
+  </div>
+  
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+</body>
+</html>

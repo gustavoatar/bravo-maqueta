@@ -1,0 +1,143 @@
+
+<!doctype html>
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Maqueta</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+  <!-- scripts concatenated and minified via ant build script-->
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/libs/slides.jquery.js"></script>
+  <script src="js/libs/scrollbar.js"></script>
+
+
+  <script>
+  
+	$(function(){
+		
+		setSizes();
+
+		$('#content').slides({
+			generateNextPrev: false,
+			play: 6500,
+			preload: true,
+			fadeSpeed: 1000,
+			effect: 'slide',
+			pagination: false,
+			preload: true,
+			autoHeight: true,
+			preloadImage: 'img/loading.gif'
+		});
+		
+		var scrollbar = new Control.ScrollBar('slides_container','scrollbar_track');
+		
+	});
+	
+	$(window).resize(function() { setSizes(); });
+	
+	function setSizes() {
+   		var containerWidth = $("#container").width();
+   		var containerHeight = $("#container").height();
+
+   		$("#content").width(containerWidth - 410);
+   		$("#content").height(containerHeight - 350);
+
+   		//$(".slides_container div").width(containerWidth - 210);
+   		$(".slides_container_size").width(containerWidth - 460);
+
+
+   		
+	}
+
+
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+	
+  <div id="container">
+  	<div class="header-space"></div>
+      <div id="header">      	
+      	<div id="header-right-space"></div>
+      	<div id="header-menu-space">
+			<ul id="main-menu" class="gradientbuttons links inline clearfix">
+				<li class="menu-365 gradientbuttons active-trail first active"><a href="/quienes-somos" class="active-trail active">Su Agencia</a></li>
+				<li class="menu-366"><a href="/marketing">MKT Bravo</a></li>
+				<li class="menu-367"><a href="/arte-dise%C3%B1o">Creatividad y Diseño</a></li>
+				<li class="menu-368"><a href="/medios">Medios</a></li>
+				<li class="menu-369"><a href="/exterior">Exterior</a></li>
+				<li class="menu-370 last"><a href="/nuevas-tecnologias">Marketing Online</a></li>
+			</ul>
+		</div>
+    </div>
+    
+    <div id="main">
+
+    	<div id="sidebar">
+			<div class="wrapper">
+			    <a href="/node/12"> <img id="descargame" src="http://www.bravopublicidad.es/contacto.png" width="99" vspace="0" align="ABSMIDDLE" border="0"><br>&nbsp;&nbsp;&nbsp;Contacto</a>
+			</div>
+		</div>
+
+		
+  		
+		<div id="content">
+			<div id="scrollbar_track"><div id="scrollbar_handle"></div></div>
+			<div class="slides_container">		
+				<div class="slides_container_size">		
+					<h1 class="title">Su Agencia</h1>
+						<p>Marketing, Publicidad y Comunicación.</p>
+						<p>Nuestra filosofía se basa en generar la <strong>empatía</strong> adecuada cliente-producto en cada fase o ciclo con la estrategia que generará la <strong>simbiosis</strong> deseada.</p>
+						<p>La <strong>rentabilidad</strong> es el eje fundamental de una campaña publicitaria, por ello planteamos una solución adaptada a su empresa y a las necesidades que posea. </p>
+						<p>Porque su <strong>tiempo</strong> es Oro y su <strong>dinero más</strong>, con Bravo Marketing y Comunicación, acertará al primer golpe en su inversión publicitaria. </p>
+						<p>Realizamos, <strong>sin coste</strong>, el esbozo del Plan Estratégico de su próxima Campaña de Publicidad, <strong>sea cual sea su presupuesto</strong>.</p>
+						<p class="fancy"><strong>Bienvenido a la publicidad rentable</strong>.</p>
+						<a style="float: left;" href="/quienes-somos/info">m&aacute;s info</a>
+				</div>
+				<div class="slides_container_size">		
+					<h1 class="title">Marketing Bravo</h1>
+						<p>El Marketing deberá incrementar los <strong>márgenes</strong> cuantitativos y cualitativos de su empresa, obteniendo un máximo grado de satisfacción del cliente, reforzando o abriendo nuevos nichos o micro nichos de mercado.  Sin olvidar la imagen de marca.</p>
+						<p>La mejor publicidad es la de <strong>clientes satisfechos</strong>, no es sólo el producto, es conocer a fondo las expectativas y necesidades de los clientes. </p>
+						<p>El Marketing es un conjunto de técnicas, con mucho de intuición y experiencia, con <strong>objetivos claros y precisos</strong>, dotado de las herramientas y metodología adecuadas.</p>
+						<p class="fancy"><strong>Marketing rentable</strong></p>
+						<a style="float: left;" href="/quienes-somos/info">m&aacute;s info</a>
+				</div>
+				<div class="slides_container_size">		
+					<h1 class="title">Creatividad y Diseño Bravo</h1>
+						<p>El diseño es una <strong>parte básica y fundamental</strong> en todas nuestras campañas, requiere talento e inspiración.</p>
+						<p>No es un arte, puesto que responde a unas necesidades específicas, llegar en todos los niveles a sus clientes.</p>
+						<p>Volcamos arte en el diseño para tener algo atractivo, evocador y estético a la par que funcional, legible y directo.  Así nos aseguramos tener una campaña única que se impregne en la memoria, con buen gusto y que resista el paso del tiempo generando <strong>simbiosis</strong> y <strong>empatía</strong> a la marca.</p>
+						<p>Nuestro equipo está compuesto por ilustradores, fotógrafos, diseñadores gráficos, licenciados en Bellas Artes...  Trabajando en costes más que razonables, se sorprenderá.</p>
+						<p>Un equipo ecléctico capaz de realizar una campaña desde sus inicios con el plan de Marketing hasta la maquetación final de las aplicaciones que necesite.  Trabajamos cualquier rama de diseño que precise, desde el diseño corporativo hasta el audiovisual.</p>
+						<p class="fancy"><strong>Bienvenido a la Creatividad efectiva</strong>.</p>
+						<a style="float: left;" href="/quienes-somos/info">m&aacute;s info</a>
+				</div>
+			</div>
+		</div>
+  	</div>
+
+    <div class="push">
+    	<!-- stuff -->
+    </div>
+  </div> <!--! end of #container -->
+  <div class="footer">
+   	<!-- stuff -->
+  </div>
+  
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+</body>
+</html>
