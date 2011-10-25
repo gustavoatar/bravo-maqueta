@@ -1,0 +1,285 @@
+<!doctype html>
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Maqueta</title>
+
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+  <!-- scripts concatenated and minified via ant build script-->
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/libs/slides.jquery.js"></script>
+  <script src="js/libs/jquery.jcarousel.js"></script>
+  <script src="js/libs/thickbox.js"></script>
+
+
+
+  <script>
+	$(function(){
+		
+		var startSlide = 1;
+		
+			if (window.location.hash) {
+				startSlide = window.location.hash.replace('#','');
+			}
+			
+		$('#content').slides({
+			generateNextPrev: false,
+			generatePagination: true,
+			preload: true,
+			hoverPause: true,
+			fadeSpeed: 1000,
+			play: 5000,
+			effect: 'slide',
+			preload: true,
+			autoHeight: true,
+			preloadImage: 'img/loading.gif',
+			animationComplete: function(current){
+					// Set the slide number as a hash
+					window.location.hash = '#' + current;
+			},
+			start: startSlide
+
+		});
+		setSizes();
+		
+	});
+	
+	$(window).resize(function() { setSizes(); });
+	
+	function setSizes() {
+   		var containerWidth = $("#container").width();
+   		var containerHeight = $("#container").height();
+
+   		$("#content").width(containerWidth - 410);
+   		$("#content").height(containerHeight - 210);
+
+   		//$(".slides_container div").width(containerWidth - 210);
+   		$(".slides_container_size").width(containerWidth - 460);
+
+
+   		
+	}
+
+tb_pathToImage = "images/loading-thickbox.gif";
+
+var mycarousel_itemList = [
+    {url: "http://static.flickr.com/66/199481236_dc98b5abb3_s.jpg", title: "Flower1"},
+    {url: "http://static.flickr.com/75/199481072_b4a0d09597_s.jpg", title: "Flower2"},
+    {url: "http://static.flickr.com/57/199481087_33ae73a8de_s.jpg", title: "Flower3"},
+    {url: "http://static.flickr.com/77/199481108_4359e6b971_s.jpg", title: "Flower4"},
+    {url: "http://static.flickr.com/58/199481143_3c148d9dd3_s.jpg", title: "Flower5"},
+    {url: "http://static.flickr.com/72/199481203_ad4cdcf109_s.jpg", title: "Flower6"},
+    {url: "http://static.flickr.com/58/199481218_264ce20da0_s.jpg", title: "Flower7"},
+    {url: "http://static.flickr.com/69/199481255_fdfe885f87_s.jpg", title: "Flower8"},
+    {url: "http://static.flickr.com/60/199480111_87d4cb3e38_s.jpg", title: "Flower9"},
+    {url: "http://static.flickr.com/70/229228324_08223b70fa_s.jpg", title: "Flower10"}
+];
+
+
+function mycarousel_itemLoadCallback(carousel, state)
+{
+    for (var i = carousel.first; i <= carousel.last; i++) {
+        if (carousel.has(i)) {
+            continue;
+        }
+
+        if (i > mycarousel_itemList.length) {
+            break;
+        }
+
+        // Create an object from HTML
+        var item = jQuery(mycarousel_getItemHTML(mycarousel_itemList[i-1])).get(0);
+
+        // Apply thickbox
+        tb_init(item);
+
+        carousel.add(i, item);
+    }
+};
+
+/**
+ * Item html creation helper.
+ */
+function mycarousel_getItemHTML(item)
+{
+    var url_m = item.url.replace(/_s.jpg/g, '_m.jpg');
+    return '<a href="' + url_m + '" title="' + item.title + '"><img src="' + item.url + '" width="75" height="75" border="0" alt="' + item.title + '" /></a>';
+};
+
+jQuery(document).ready(function() {
+    jQuery('#mycarousel').jcarousel({
+        size: mycarousel_itemList.length,
+        itemLoadCallback: {onBeforeAnimation: mycarousel_itemLoadCallback}
+    });
+});
+</script>
+  
+<script type="text/javascript">
+(function($){	
+  $(function(){
+    $('#slider1').bxSlider({
+      mode: 'fade',
+      captions: false,
+      auto: true,
+      controls: false
+    });
+  });	
+}(jQuery))
+</script>
+  <link rel="stylesheet" href="css/thickbox.css">
+  <link rel="stylesheet" href="css/skins/tango/skin.css">
+  <link rel="stylesheet" href="css/bx_styles/bx_styles.css">
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+<body>
+	
+  <div id="container">
+  	<div class="header-space"></div>
+      <div id="header">      	
+      	<div id="header-right-space"></div>
+      	<div id="header-menu-space">
+			<ul id="main-menu" class="gradientbuttons links inline clearfix">
+				<li class="menu-365 gradientbuttons active-trail first active"><a href="#1" class="active-trail active">Su Agencia</a></li>
+				<li class="menu-366"><a href="#2">MKT Bravo</a></li>
+				<li class="menu-367"><a href="#3">Creatividad y Dise√±o</a></li>
+				<li class="menu-368"><a href="#2">Medios</a></li>
+				<li class="menu-369"><a href="#2">Exterior</a></li>
+				<li class="menu-370 last"><a href="#2">Marketing Online</a></li>
+			</ul>
+		</div>
+    </div>
+    
+    <div id="main">
+
+    	<div id="sidebar">
+    		<div class="demo-wrap">
+	    		<ul id="slider1" class="multiple captions">
+				  <li>
+				    <img src="/img/logos/Mercedes_logo.jpg" width="100" title="The Velvet Underground and Nico" />
+				  </li>
+				  <li>
+				    <img src="/img/logos/Ford Logo.jpg" width="100"  title="The Velvet Underground and Nico" />
+				  </li>
+				  <li>
+				    <img src="/img/logos/volkswagen-logo_th_2.jpg" width="100"  title="The Velvet Underground and Nico" />
+				  </li>
+				  <li>
+				    <img src="/img/logos/LOreal-Logo-Heavy-lo-res[1].jpg" width="100" title="The Velvet Underground and Nico" />
+				  </li>
+				</ul>
+			</div>
+			<div class="wrapper">
+			    <a href="/node/12"> <img id="descargame" src="http://www.bravopublicidad.es/contacto.png" width="99" vspace="0" align="ABSMIDDLE" border="0"><br>&nbsp;&nbsp;&nbsp;Contacto</a>
+			</div>
+		</div>
+
+		
+  		
+		<div id="content">
+			<div class="slides_container">		
+				
+				<div class="slides_container_size">		
+					<h1 class="title">Su Agencia</h1>
+						<p>Marketing, Publicidad y Comunicaci√≥n.</p>
+						<p>Nuestra filosof√≠a se basa en generar la <strong>empat√≠a</strong> adecuada cliente-producto en cada fase o ciclo con la estrategia que generar√° la <strong>simbiosis</strong> deseada.</p>
+						<p>La <strong>rentabilidad</strong> es el eje fundamental de una campa√±a publicitaria, por ello planteamos una soluci√≥n adaptada a su empresa y a las necesidades que posea. </p>
+						<p>Porque su <strong>tiempo</strong> es Oro y su <strong>dinero m√°s</strong>, con Bravo Marketing y Comunicaci√≥n, acertar√° al primer golpe en su inversi√≥n publicitaria. </p>
+						<p>Realizamos, <strong>sin coste</strong>, el esbozo del Plan Estrat√©gico de su pr√≥xima Campa√±a de Publicidad, <strong>sea cual sea su presupuesto</strong>.</p>
+						<ul id="mycarousel" class="jcarousel-skin-ie7">
+						    <!-- The content will be dynamically loaded in here -->
+						  </ul>
+
+						<p class="fancy"><strong>Bienvenido a la publicidad rentable</strong>.</p>
+						<a style="float: left;" href="/quienes-somos/info">m&aacute;s info</a>
+				</div>
+				
+				<div class="slides_container_size">		
+					<h1 class="title">Marketing Bravo</h1>
+						<p>El Marketing deber√° incrementar los <strong>m√°rgenes</strong> cuantitativos y cualitativos de su empresa, obteniendo un m√°ximo grado de satisfacci√≥n del cliente, reforzando o abriendo nuevos nichos o micro nichos de mercado.  Sin olvidar la imagen de marca.</p>
+						<p>La mejor publicidad es la de <strong>clientes satisfechos</strong>, no es s√≥lo el producto, es conocer a fondo las expectativas y necesidades de los clientes. </p>
+						<p>El Marketing es un conjunto de t√©cnicas, con mucho de intuici√≥n y experiencia, con <strong>objetivos claros y precisos</strong>, dotado de las herramientas y metodolog√≠a adecuadas.</p>
+						<p class="fancy"><strong>Marketing rentable</strong></p>
+						<a style="float: left;" href="/quienes-somos/info">m&aacute;s info</a>
+				</div>
+				
+				
+				<div class="slides_container_size">		
+					<h1 class="title">Creatividad y Dise√±o Bravo</h1>
+						<p>El dise√±o es una <strong>parte b√°sica y fundamental</strong> en todas nuestras campa√±as, requiere talento e inspiraci√≥n.</p>
+						<p>No es un arte, puesto que responde a unas necesidades espec√≠ficas, llegar en todos los niveles a sus clientes.</p>
+						<p>Volcamos arte en el dise√±o para tener algo atractivo, evocador y est√©tico a la par que funcional, legible y directo.  As√≠ nos aseguramos tener una campa√±a √∫nica que se impregne en la memoria, con buen gusto y que resista el paso del tiempo generando <strong>simbiosis</strong> y <strong>empat√≠a</strong> a la marca.</p>
+						<p>Nuestro equipo est√° compuesto por ilustradores, fot√≥grafos, dise√±adores gr√°ficos, licenciados en Bellas Artes...  Trabajando en costes m√°s que razonables, se sorprender√°.</p>
+						<p>Un equipo ecl√©ctico capaz de realizar una campa√±a desde sus inicios con el plan de Marketing hasta la maquetaci√≥n final de las aplicaciones que necesite.  Trabajamos cualquier rama de dise√±o que precise, desde el dise√±o corporativo hasta el audiovisual.</p>
+						<p class="fancy"><strong>Bienvenido a la Creatividad efectiva</strong>.</p>
+						<a style="float: left;" href="/quienes-somos/info">m&aacute;s info</a>
+				</div>
+				
+				
+				<div class="slides_container_size">	
+					<h1 class="title">Medios</h1>
+					<p>Realizar una gestiÛn de medios conlleva conocimiento, experiencia e intuiciÛn. </p>
+					<p>La experiencia, el an·lisis de campaÒa y la profesionalidad, son aspectos esenciales para sus intereses. </p>
+					<p>Incidir en el target adecuado es vital. Lo bordaremos con el ritmo e intensidad precisos. </p>
+					<p>Las posibilidades son ilimitadas, las decisiones muy <strong>concretas</strong> y a su <strong>medida</strong>, ajust·ndose al presupuesto inicial: </p>
+					<p>- TV: spots, sobreimpresiones, product placement, introducciÛn sutil y natural en los medios, integraciÛn, contenido, branding, cine, series, etc.<br>
+					- Radio: con un lenguaje propio, cuÒas, menciones, patrocinios, microespacios, reports, etc.<br>
+					- Prensa: diarios, suplementos, gr·ficos, revistas sectoriales, fotografÌa, ilustraciones, publirreportajes, encartes, etc.<br>
+					- Outdoor, generaciÛn de eventos propios</p>
+					<p>HuÌmos de los automatismos y su jerga, que permiten planificar todo su presupuesto y gastarlo en tres minutos, tan habitual en el sector.</p>
+				</div>
+				
+				
+				<div class="slides_container_size">	
+					<h1 class="title">Exterior</h1>
+					<p>La publicidad exterior es de los medios m·s agradecidos, efectivos y rentables, junto a Internet, es el lÌder en crecimiento en los ˙ltimos 4 aÒos.</p>
+					<p>Requiere unas tÈcnicas y conocimientos especÌficos, claro, sencillo, atractivo, concreto, directo y agradable.</p>
+					<p>Sus grandes dimensiones son ideales para impactar.   Tenemos 6 segundos para desarrollar el sistema AIDA.</p>
+					<p>No puede ni debe saturar. El mensaje debe ser <strong>˙nico</strong>, corto y conciso, atrayente, seductorÖ y todo en dos segundos. </p>
+					<p>øDÛnde vive, trabaja, compra y disfruta del ocio nuestro <strong>grupo-target</strong>?  CampaÒa direccional, corporativa, semanal, quincenal, mensual, anual, ...</p>
+					<p>Un target claro ser· la <strong>clave</strong> para sugerir y presupuestar una campaÒa de publicidad exterior. </p>
+					<p>El sector es uno de los pocos en constante crecimiento y <strong>generador</strong> de beneficios, entre los medios tradicionales.</p>
+					<p>Tendremo la lÌnea de publicidad masiva (Above the line ATL) o la selectiva BTL.</p>
+					<p class="fancy"><strong>Bienvenidos a la rentabilidad, del Exterior</strong>.</p>
+				</div>
+				
+				
+				<div class="slides_container_size">	
+					<h1 class="title">Exterior</h1>
+					<p>Es un sector en auge y juega un papel cada vez m·s vital en el mundo de la publicidad. </p>
+					<p>La tecnologÌa cambia constantemente, resultando cada vez m·s complicada de comprender y manejar. </p>
+					<p>Las aplicaciones est·n en contÌnua evoluciÛn. </p>
+					<p>Bravo Online adaptar· las idÛneas, buscando el ratio de retorno adecuado y la rentabilidad por click.</p>
+					<p>Aunque pueden ser difÌciles de entender, los nuevos medios online son esenciales para una empresa o individual. </p>
+					<p>Usted llegar· a disfrutar de todos los beneficios de estas mismas tecnologÌas con el conocimiento e informaciÛn adecuados, y para ello ponemos a su disposiciÛn un plan de marketing especÌfico para su empresa.</p>
+					<p class="fancy"><strong>Las Nuevas TecnologÌas son el presente y futuro de su negocio</strong>.</p>
+
+				</div>
+			</div>
+		</div>
+  	</div>
+
+    <div class="push">
+    	<!-- stuff -->
+    </div>
+  </div> <!--! end of #container -->
+  <div class="footer">
+   	<!-- stuff -->
+  </div>
+  
+
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+</body>
+</html>
