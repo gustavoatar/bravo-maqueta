@@ -1,10 +1,10 @@
-
 <!doctype html>
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Maqueta</title>
+
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -14,27 +14,48 @@
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
   <script src="js/libs/slides.jquery.js"></script>
-  <script src="js/libs/scrollbar.js"></script>
+  <script src="js/libs/jquery.jcarousel.js"></script>
+  <script src="js/libs/thickbox.js"></script>
+
 
 
   <script>
 	$(function(){
-		setSizes();
+		
+		var startSlide = 1;
+		
+		if (window.location.hash) {
+			startSlide = window.location.hash.replace('#','');
+		}
+			
 		$('#content').slides({
-			generateNextPrev: false,
-			play: 6500,
+			generatePagination: true,
+			pagination:true,
 			preload: true,
+			hoverPause: true,
 			fadeSpeed: 1000,
+			play: 5000,
 			effect: 'slide',
-			pagination: false,
 			preload: true,
 			autoHeight: true,
-			preloadImage: 'img/loading.gif'
+			preloadImage: 'img/loading.gif',
+			animationComplete: function(current){
+					// Set the slide number as a hash
+					window.location.hash = '#' + current;
+			},
+			start: startSlide
+
 		});
+		setSizes();
 		
-		var scrollbar = new Control.ScrollBar('slides_container','scrollbar_track');
 		
+	$('.link').click(function() {
+	    var link = $(this).attr('href').replace('#','');
+	    $('.pagination li:eq(' + (link - 1) + ') a').click();
+	    return false;
 	});
+});
+	
 	
 	$(window).resize(function() { setSizes(); });
 	
@@ -43,17 +64,32 @@
    		var containerHeight = $("#container").height();
 
    		$("#content").width(containerWidth - 410);
-   		$("#content").height(containerHeight - 350);
+   		$("#content").height(containerHeight - 210);
 
    		//$(".slides_container div").width(containerWidth - 210);
    		$(".slides_container_size").width(containerWidth - 460);
-
-
-   		
 	}
 
 
-  </script>
+
+
+</script>
+  
+<script type="text/javascript">
+
+$(function(){
+    $('#slider1').bxSlider({
+      mode: 'fade',
+      captions: false,
+      auto: true,
+      controls: false
+    });
+});
+
+</script>
+
+  <link rel="stylesheet" href="css/skins/tango/skin.css">
+  <link rel="stylesheet" href="css/bx_styles/bx_styles.css">
   <link rel="stylesheet" href="css/style.css">
 
 
@@ -66,12 +102,12 @@
       	<div id="header-right-space"></div>
       	<div id="header-menu-space">
 			<ul id="main-menu" class="gradientbuttons links inline clearfix">
-				<li class="menu-365 gradientbuttons active-trail first active"><a href="/quienes-somos" class="active-trail active">Su Agencia</a></li>
-				<li class="menu-366"><a href="/marketing">MKT Bravo</a></li>
-				<li class="menu-367"><a href="/arte-dise%C3%B1o">Creatividad y Diseño</a></li>
-				<li class="menu-368"><a href="/medios">Medios</a></li>
-				<li class="menu-369"><a href="/exterior">Exterior</a></li>
-				<li class="menu-370 last"><a href="/nuevas-tecnologias">Marketing Online</a></li>
+				<li><a href="#1" class="outside_link">Su Agencia</a></li>
+				<li><a class="outside_link" href="#2">MKT Bravo</a></li>
+				<li><a class="outside_link" href="#3">Creatividad y Diseño</a></li>
+				<li><a class="outside_link" href="#4">Medios</a></li>
+				<li><a class="outside_link" href="#5">Exterior</a></li>
+				<li><a class="outside_link" href="#6">Marketing Online</a></li>
 			</ul>
 		</div>
     </div>
@@ -79,6 +115,22 @@
     <div id="main">
 
     	<div id="sidebar">
+    		<div class="demo-wrap">
+	    		<ul id="slider1" class="multiple captions">
+				  <li>
+				    <img src="img/logos/Mercedes_logo.jpg" width="100" title="The Velvet Underground and Nico" />
+				  </li>
+				  <li>
+				    <img src="img/logos/Ford Logo.jpg" width="100"  title="The Velvet Underground and Nico" />
+				  </li>
+				  <li>
+				    <img src="img/logos/volkswagen-logo_th_2.jpg" width="100"  title="The Velvet Underground and Nico" />
+				  </li>
+				  <li>
+				    <img src="img/logos/LOreal-Logo-Heavy-lo-res[1].jpg" width="100" title="The Velvet Underground and Nico" />
+				  </li>
+				</ul>
+			</div>
 			<div class="wrapper">
 			    <a href="/node/12"> <img id="descargame" src="http://www.bravopublicidad.es/contacto.png" width="99" vspace="0" align="ABSMIDDLE" border="0"><br>&nbsp;&nbsp;&nbsp;Contacto</a>
 			</div>
@@ -87,8 +139,8 @@
 		
   		
 		<div id="content">
-			<div id="scrollbar_track"><div id="scrollbar_handle"></div></div>
 			<div class="slides_container">		
+				
 				<div class="slides_container_size">		
 					<h1 class="title">Su Agencia</h1>
 						<p>Marketing, Publicidad y Comunicación.</p>
@@ -96,9 +148,13 @@
 						<p>La <strong>rentabilidad</strong> es el eje fundamental de una campaña publicitaria, por ello planteamos una solución adaptada a su empresa y a las necesidades que posea. </p>
 						<p>Porque su <strong>tiempo</strong> es Oro y su <strong>dinero más</strong>, con Bravo Marketing y Comunicación, acertará al primer golpe en su inversión publicitaria. </p>
 						<p>Realizamos, <strong>sin coste</strong>, el esbozo del Plan Estratégico de su próxima Campaña de Publicidad, <strong>sea cual sea su presupuesto</strong>.</p>
+						<p><a href="#1" class="link">Check out the first slide &rsaquo;</a></p>
+
+
 						<p class="fancy"><strong>Bienvenido a la publicidad rentable</strong>.</p>
 						<a style="float: left;" href="/quienes-somos/info">m&aacute;s info</a>
 				</div>
+				
 				<div class="slides_container_size">		
 					<h1 class="title">Marketing Bravo</h1>
 						<p>El Marketing deberá incrementar los <strong>márgenes</strong> cuantitativos y cualitativos de su empresa, obteniendo un máximo grado de satisfacción del cliente, reforzando o abriendo nuevos nichos o micro nichos de mercado.  Sin olvidar la imagen de marca.</p>
@@ -107,6 +163,8 @@
 						<p class="fancy"><strong>Marketing rentable</strong></p>
 						<a style="float: left;" href="/quienes-somos/info">m&aacute;s info</a>
 				</div>
+				
+				
 				<div class="slides_container_size">		
 					<h1 class="title">Creatividad y Diseño Bravo</h1>
 						<p>El diseño es una <strong>parte básica y fundamental</strong> en todas nuestras campañas, requiere talento e inspiración.</p>
@@ -116,6 +174,47 @@
 						<p>Un equipo ecléctico capaz de realizar una campaña desde sus inicios con el plan de Marketing hasta la maquetación final de las aplicaciones que necesite.  Trabajamos cualquier rama de diseño que precise, desde el diseño corporativo hasta el audiovisual.</p>
 						<p class="fancy"><strong>Bienvenido a la Creatividad efectiva</strong>.</p>
 						<a style="float: left;" href="/quienes-somos/info">m&aacute;s info</a>
+				</div>
+				
+				
+				<div class="slides_container_size">	
+					<h1 class="title">Medios</h1>
+					<p>Realizar una gesti�n de medios conlleva conocimiento, experiencia e intuici�n. </p>
+					<p>La experiencia, el an�lisis de campa�a y la profesionalidad, son aspectos esenciales para sus intereses. </p>
+					<p>Incidir en el target adecuado es vital. Lo bordaremos con el ritmo e intensidad precisos. </p>
+					<p>Las posibilidades son ilimitadas, las decisiones muy <strong>concretas</strong> y a su <strong>medida</strong>, ajust�ndose al presupuesto inicial: </p>
+					<p>- TV: spots, sobreimpresiones, product placement, introducci�n sutil y natural en los medios, integraci�n, contenido, branding, cine, series, etc.<br>
+					- Radio: con un lenguaje propio, cu�as, menciones, patrocinios, microespacios, reports, etc.<br>
+					- Prensa: diarios, suplementos, gr�ficos, revistas sectoriales, fotograf�a, ilustraciones, publirreportajes, encartes, etc.<br>
+					- Outdoor, generaci�n de eventos propios</p>
+					<p>Hu�mos de los automatismos y su jerga, que permiten planificar todo su presupuesto y gastarlo en tres minutos, tan habitual en el sector.</p>
+				</div>
+				
+				
+				<div class="slides_container_size">	
+					<h1 class="title">Exterior</h1>
+					<p>La publicidad exterior es de los medios m�s agradecidos, efectivos y rentables, junto a Internet, es el l�der en crecimiento en los �ltimos 4 a�os.</p>
+					<p>Requiere unas t�cnicas y conocimientos espec�ficos, claro, sencillo, atractivo, concreto, directo y agradable.</p>
+					<p>Sus grandes dimensiones son ideales para impactar.   Tenemos 6 segundos para desarrollar el sistema AIDA.</p>
+					<p>No puede ni debe saturar. El mensaje debe ser <strong>�nico</strong>, corto y conciso, atrayente, seductor� y todo en dos segundos. </p>
+					<p>�D�nde vive, trabaja, compra y disfruta del ocio nuestro <strong>grupo-target</strong>?  Campa�a direccional, corporativa, semanal, quincenal, mensual, anual, ...</p>
+					<p>Un target claro ser� la <strong>clave</strong> para sugerir y presupuestar una campa�a de publicidad exterior. </p>
+					<p>El sector es uno de los pocos en constante crecimiento y <strong>generador</strong> de beneficios, entre los medios tradicionales.</p>
+					<p>Tendremo la l�nea de publicidad masiva (Above the line ATL) o la selectiva BTL.</p>
+					<p class="fancy"><strong>Bienvenidos a la rentabilidad, del Exterior</strong>.</p>
+				</div>
+				
+				
+				<div class="slides_container_size">	
+					<h1 class="title">Exterior</h1>
+					<p>Es un sector en auge y juega un papel cada vez m�s vital en el mundo de la publicidad. </p>
+					<p>La tecnolog�a cambia constantemente, resultando cada vez m�s complicada de comprender y manejar. </p>
+					<p>Las aplicaciones est�n en cont�nua evoluci�n. </p>
+					<p>Bravo Online adaptar� las id�neas, buscando el ratio de retorno adecuado y la rentabilidad por click.</p>
+					<p>Aunque pueden ser dif�ciles de entender, los nuevos medios online son esenciales para una empresa o individual. </p>
+					<p>Usted llegar� a disfrutar de todos los beneficios de estas mismas tecnolog�as con el conocimiento e informaci�n adecuados, y para ello ponemos a su disposici�n un plan de marketing espec�fico para su empresa.</p>
+					<p class="fancy"><strong>Las Nuevas Tecnolog�as son el presente y futuro de su negocio</strong>.</p>
+
 				</div>
 			</div>
 		</div>

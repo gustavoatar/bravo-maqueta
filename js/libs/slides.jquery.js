@@ -484,6 +484,22 @@
 				}
 				return false;
 			});
+			
+			
+			$('a.outside_link').click(function(){
+				// pause slideshow
+				if (option.play) {
+					 pause();
+				}
+				// get clicked, pass to animate function					
+				clicked = $(this).attr('href').match('[^#/]+$') - 1;
+				// if current slide equals clicked, don't do anything
+				if (current != clicked) {
+					animate('pagination', paginationEffect, clicked);
+				}
+				
+				return false;
+			});
 		
 			if (option.play) {
 				// set interval
