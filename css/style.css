@@ -276,8 +276,7 @@ td { vertical-align: top; }
 
 
 #container {
-	background-image: url('/img/fondo_exterior.jpg');
-	background-position:bottom left;
+	background-image: url('../img/logo/loreal-logo.jpg');
 	margin: 0;
 	padding: 0;
 	width: 100%;

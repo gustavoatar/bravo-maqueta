@@ -15,8 +15,8 @@
   <script src="js/script.js"></script>
   <script src="js/libs/slides.jquery.js"></script>
   <script src="js/libs/jquery.jcarousel.js"></script>
-  <script src="js/libs/thickbox.js"></script>
 
+  <script src="js/libs/jquery.bxSlider.min.js"></script>
 
 
   <script>
@@ -71,7 +71,27 @@
 	}
 
 
+  function showSplash() {
+    var interrupt;
+    interrupt = window.setTimeout(slider.hideSplash, 3000);
+    $('#splash').show().click(function() {
+      hideSplash();
+      clearTimeout(interrupt);
+    });
+  }
 
+  function hideSplash() {
+    $('.page-slider-wrap').css('margin-left', '1200px');
+ 
+    $('#splash').animate(
+        { 'right': '100%' },
+        {
+          duration: 800,
+          complete: function() {
+            $(this).remove();
+          }
+        });
+  }
 
 </script>
   
@@ -95,7 +115,21 @@ $(function(){
 
 </head>
 <body>
-	
+
+<!-- Include Splash -->
+
+  <div id="splash" style="height: 100%; width: 100%; position: fixed; z-index: 30000; display: none; margin: 0; background: #fff; text-align: center;">
+      <img src="../img/acertarse.jpg" alt="Bravo Publicidad" title="Bravo Publicidad -- Acierta al primer golpe" style="margin: auto;"/>
+    </div>
+    <script type="text/javascript">
+      // Should we show the splash screen?
+      var ref = document.referrer.toLowerCase();
+
+        $('#splash').show();
+      
+    </script>
+    
+ 
   <div id="container">
   	<div class="header-space"></div>
       <div id="header">      	
@@ -115,22 +149,24 @@ $(function(){
     <div id="main">
 
     	<div id="sidebar">
-    		<div class="demo-wrap">
-	    		<ul id="slider1" class="multiple captions">
+    		
+    		<div >
+	    		<ul id="slider1" class="multiple">
 				  <li>
-				    <img src="img/logos/Mercedes_logo.jpg" width="100" title="The Velvet Underground and Nico" />
+				    <img src="img/logos/Mercedes_logo.jpg" width="100" height="100" title="The Velvet Underground and Nico" />
 				  </li>
 				  <li>
-				    <img src="img/logos/Ford Logo.jpg" width="100"  title="The Velvet Underground and Nico" />
+				    <img src="img/logos/Ford.jpg" width="100"  height="100" title="The Velvet Underground and Nico" />
 				  </li>
 				  <li>
-				    <img src="img/logos/volkswagen-logo_th_2.jpg" width="100"  title="The Velvet Underground and Nico" />
+				    <img src="img/logos/volkswagen-logo_th_2.jpg" width="100"  height="100" title="The Velvet Underground and Nico" />
 				  </li>
 				  <li>
-				    <img src="img/logos/LOreal-Logo-Heavy-lo-res[1].jpg" width="100" title="The Velvet Underground and Nico" />
+				    <img src="img/logos/loreal-logo.jpg" width="100"  height="100" title="The Velvet Underground and Nico" />
 				  </li>
 				</ul>
 			</div>
+			
 			<div class="wrapper">
 			    <a href="/node/12"> <img id="descargame" src="http://www.bravopublicidad.es/contacto.png" width="99" vspace="0" align="ABSMIDDLE" border="0"><br>&nbsp;&nbsp;&nbsp;Contacto</a>
 			</div>
@@ -143,7 +179,7 @@ $(function(){
 				
 				<div class="slides_container_size">		
 					<h1 class="title">Su Agencia</h1>
-						<p>Marketing, Publicidad y Comunicación.</p>
+						<p>Marketing, Publicidad y Comunicaci�n.</p>
 						<p>Nuestra filosofía se basa en generar la <strong>empatía</strong> adecuada cliente-producto en cada fase o ciclo con la estrategia que generará la <strong>simbiosis</strong> deseada.</p>
 						<p>La <strong>rentabilidad</strong> es el eje fundamental de una campaña publicitaria, por ello planteamos una solución adaptada a su empresa y a las necesidades que posea. </p>
 						<p>Porque su <strong>tiempo</strong> es Oro y su <strong>dinero más</strong>, con Bravo Marketing y Comunicación, acertará al primer golpe en su inversión publicitaria. </p>
@@ -152,7 +188,6 @@ $(function(){
 
 
 						<p class="fancy"><strong>Bienvenido a la publicidad rentable</strong>.</p>
-						<a style="float: left;" href="/quienes-somos/info">m&aacute;s info</a>
 				</div>
 				
 				<div class="slides_container_size">		
@@ -160,8 +195,8 @@ $(function(){
 						<p>El Marketing deberá incrementar los <strong>márgenes</strong> cuantitativos y cualitativos de su empresa, obteniendo un máximo grado de satisfacción del cliente, reforzando o abriendo nuevos nichos o micro nichos de mercado.  Sin olvidar la imagen de marca.</p>
 						<p>La mejor publicidad es la de <strong>clientes satisfechos</strong>, no es sólo el producto, es conocer a fondo las expectativas y necesidades de los clientes. </p>
 						<p>El Marketing es un conjunto de técnicas, con mucho de intuición y experiencia, con <strong>objetivos claros y precisos</strong>, dotado de las herramientas y metodología adecuadas.</p>
+						<p><a href="#1" class="link">m�s informaci�n sobre el marketing rentable &rsaquo;</a></p>
 						<p class="fancy"><strong>Marketing rentable</strong></p>
-						<a style="float: left;" href="/quienes-somos/info">m&aacute;s info</a>
 				</div>
 				
 				
@@ -172,8 +207,8 @@ $(function(){
 						<p>Volcamos arte en el diseño para tener algo atractivo, evocador y estético a la par que funcional, legible y directo.  Así nos aseguramos tener una campaña única que se impregne en la memoria, con buen gusto y que resista el paso del tiempo generando <strong>simbiosis</strong> y <strong>empatía</strong> a la marca.</p>
 						<p>Nuestro equipo está compuesto por ilustradores, fotógrafos, diseñadores gráficos, licenciados en Bellas Artes...  Trabajando en costes más que razonables, se sorprenderá.</p>
 						<p>Un equipo ecléctico capaz de realizar una campaña desde sus inicios con el plan de Marketing hasta la maquetación final de las aplicaciones que necesite.  Trabajamos cualquier rama de diseño que precise, desde el diseño corporativo hasta el audiovisual.</p>
+						<p><a href="#1" class="link">m�s informaci�n sobre la creatividad efectiva &rsaquo;</a></p>
 						<p class="fancy"><strong>Bienvenido a la Creatividad efectiva</strong>.</p>
-						<a style="float: left;" href="/quienes-somos/info">m&aacute;s info</a>
 				</div>
 				
 				
@@ -188,6 +223,8 @@ $(function(){
 					- Prensa: diarios, suplementos, gr�ficos, revistas sectoriales, fotograf�a, ilustraciones, publirreportajes, encartes, etc.<br>
 					- Outdoor, generaci�n de eventos propios</p>
 					<p>Hu�mos de los automatismos y su jerga, que permiten planificar todo su presupuesto y gastarlo en tres minutos, tan habitual en el sector.</p>
+					<p><a href="#1" class="link">m�s informaci�n &rsaquo;</a></p>
+
 				</div>
 				
 				
@@ -201,6 +238,7 @@ $(function(){
 					<p>Un target claro ser� la <strong>clave</strong> para sugerir y presupuestar una campa�a de publicidad exterior. </p>
 					<p>El sector es uno de los pocos en constante crecimiento y <strong>generador</strong> de beneficios, entre los medios tradicionales.</p>
 					<p>Tendremo la l�nea de publicidad masiva (Above the line ATL) o la selectiva BTL.</p>
+						<p><a href="#1" class="link">m�s informaci�n sobre rentabilidad del exterior &rsaquo;</a></p>
 					<p class="fancy"><strong>Bienvenidos a la rentabilidad, del Exterior</strong>.</p>
 				</div>
 				
@@ -213,6 +251,7 @@ $(function(){
 					<p>Bravo Online adaptar� las id�neas, buscando el ratio de retorno adecuado y la rentabilidad por click.</p>
 					<p>Aunque pueden ser dif�ciles de entender, los nuevos medios online son esenciales para una empresa o individual. </p>
 					<p>Usted llegar� a disfrutar de todos los beneficios de estas mismas tecnolog�as con el conocimiento e informaci�n adecuados, y para ello ponemos a su disposici�n un plan de marketing espec�fico para su empresa.</p>
+					<p><a href="#1" class="link">m�s informaci�n sobre nuevas tecnologias &rsaquo;</a></p>
 					<p class="fancy"><strong>Las Nuevas Tecnolog�as son el presente y futuro de su negocio</strong>.</p>
 
 				</div>
