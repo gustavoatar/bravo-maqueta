@@ -8,18 +8,31 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
   <!-- scripts concatenated and minified via ant build script-->
   <script src="js/plugins.js"></script>
   <script src="js/script.js"></script>
   <script src="js/libs/slides.jquery.js"></script>
   <script src="js/libs/jquery.jcarousel.js"></script>
+  <script src="js/libs/jquery.cookies.2.2.0.min.js"></script>
 
   <script src="js/libs/jquery.bxSlider.min.js"></script>
 
 
   <script>
+  
+	  var firstv = $.cookies.get('first_visit');
+	  
+	  if(firstv) {
+	  	$('#splash').hide();
+	  } else {
+	  	$.cookies.set('first_visit');
+		showSplash();
+	  }
+  
+  
 	$(function(){
 		
 		var startSlide = 1;
@@ -27,7 +40,7 @@
 		if (window.location.hash) {
 			startSlide = window.location.hash.replace('#','');
 		}
-			
+
 		$('#content').slides({
 			generatePagination: true,
 			pagination:true,
@@ -44,59 +57,46 @@
 					window.location.hash = '#' + current;
 			},
 			start: startSlide
-
 		});
+
 		setSizes();
-		
-		
-	$('.link').click(function() {
-	    var link = $(this).attr('href').replace('#','');
-	    $('.pagination li:eq(' + (link - 1) + ') a').click();
-	    return false;
+
 	});
-});
-	
-	
+
+
 	$(window).resize(function() { setSizes(); });
 	
 	function setSizes() {
-   		var containerWidth = $("#container").width();
-   		var containerHeight = $("#container").height();
-
-   		$("#content").width(containerWidth - 410);
-   		$("#content").height(containerHeight - 210);
-
-   		//$(".slides_container div").width(containerWidth - 210);
-   		$(".slides_container_size").width(containerWidth - 460);
+		var containerWidth = $("#container").width();
+		var containerHeight = $("#container").height();
+	
+		$("#content").width(containerWidth - 410);
+		$("#content").height(containerHeight - 210);
+	
+		$(".slides_container_size").width(containerWidth - 460);
 	}
 
+	function showSplash() {
+		var interrupt;
+		interrupt = window.setTimeout(hideSplash, 5000);
+		$('#splash').show().click(function() {
+			hideSplash();
+			clearTimeout(interrupt);
+		});
+	}
 
-  function showSplash() {
-    var interrupt;
-    interrupt = window.setTimeout(slider.hideSplash, 3000);
-    $('#splash').show().click(function() {
-      hideSplash();
-      clearTimeout(interrupt);
-    });
-  }
-
-  function hideSplash() {
-    $('.page-slider-wrap').css('margin-left', '1200px');
- 
-    $('#splash').animate(
-        { 'right': '100%' },
-        {
-          duration: 800,
-          complete: function() {
-            $(this).remove();
-          }
-        });
-  }
-
+	function hideSplash() {
+		$('#splash').animate({ 'right': '100%' },
+	        {
+	          duration: 2000,
+	          complete: function() {
+	            $(this).remove();
+	        }
+		});
+	}
 </script>
-  
-<script type="text/javascript">
 
+<script type="text/javascript">
 $(function(){
     $('#slider1').bxSlider({
       mode: 'fade',
@@ -119,7 +119,7 @@ $(function(){
 <!-- Include Splash -->
 
   <div id="splash" style="height: 100%; width: 100%; position: fixed; z-index: 30000; display: none; margin: 0; background: #fff; text-align: center;">
-      <img src="../img/acertarse.jpg" alt="Bravo Publicidad" title="Bravo Publicidad -- Acierta al primer golpe" style="margin: auto;"/>
+      <img src="img/acertarse.jpg" alt="Bravo Publicidad" title="Bravo Publicidad -- Acierta al primer golpe" style="margin: auto;"/>
     </div>
     <script type="text/javascript">
       // Should we show the splash screen?
