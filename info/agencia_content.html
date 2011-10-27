@@ -1,0 +1,24 @@
+<h1 class="title">Su Agencia</h1>
+<p>Marketing, Publicidad y Comunicaci&oacute;n.</p>
+<p>Nuestra filosof&iacute;a se basa en generar la <strong>empat&iacute;a</strong> adecuada cliente-producto en cada fase o ciclo con la estrategia que generar&aacute; la <strong>simbiosis</strong> deseada.</p>
+<p>La <strong>rentabilidad</strong> es el eje fundamental de una campa&ntilde;a publicitaria, por ello planteamos una soluci&oacute;n adaptada a su empresa y a las necesidades que posea. </p>
+<p>Porque su <strong>tiempo</strong> es Oro y su <strong>dinero m&aacute;s</strong>, con Bravo Marketing y Comunicaci&oacute;n, acertar&aacute; al primer golpe en su inversi&oacute; publicitaria. </p>
+<p>Realizamos, <strong>sin coste</strong>, el esbozo del Plan Estrat&eacute;gico de su pr&oacute; xima Campa&ntilde;a de Publicidad, <strong>sea cual sea su presupuesto</strong>.</p>
+<p><a href="#1" class="button big white" id="link1">m&aacute;s sobre nosotros &rsaquo;</a></p>
+
+
+<p class="fancy"><strong>Bienvenido a la publicidad rentable</strong>.</p>
+
+<script type="text/javascript">
+
+	$('#link1').click(function() {
+		makeLoader();
+			$.get('info/agencia.html', function(data) {
+				$("#content_agencia").html(data);
+				clearLoader()
+				return false;
+			});
+		
+	});
+
+</script>
