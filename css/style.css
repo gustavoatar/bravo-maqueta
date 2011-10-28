@@ -434,7 +434,7 @@ font-family: "ITCOfficinaSansStdBook", Arial, Helvetica, sans-serif;
 }
 
 .fancy {
-font-size: 70px;
+font-size: 50px;
 text-align: right;
 font-family: "JellykaEstryasHandwritingRg";
 margin-right: 50px;
@@ -612,3 +612,12 @@ border-radius: 10px;
 	color: #666;
 	
 }
+
+#marco {
+
+background-image:url(../img/example-frame.png);
+background-repeat:no-repeat;
+background-position:top;
+padding:10px;
+}
+

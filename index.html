@@ -24,10 +24,9 @@
   <script>
   
 	$(function(){
-		
+				
 		setSizes();	
-		
-		
+
 		var startSlide = 1;
 		
 		if (window.location.hash) {
@@ -57,17 +56,37 @@
 		    $('.pagination li:eq(' + (link - 1) + ') a').click();
 		    return false;
 		});
-		/*
-		$("#foo1").carouFredSel();
-		$("#foo1 a").fancybox({
-			cyclic	: true,
-			onStart	: function() {
-				$("#foo1").trigger("pause");
-			},
-			onClosed: function() {
-				$("#foo1").trigger("play");
-			}
-		}); */
+
+		$('#slides_agencia').slides({
+				preload: true,
+				preloadImage: 'img/loading.gif',
+				play: 3000,
+				pause: 2500,
+				hoverPause: true,
+				animationStart: function(current){
+					$('.caption').animate({
+						bottom:-35
+					},100);
+					if (window.console && console.log) {
+						console.log('animationStart on slide: ', current);
+					};
+				},
+
+				animationComplete: function(current){
+					$('.caption').animate({
+						bottom:0
+					},200);
+					if (window.console && console.log) {
+						console.log('animationComplete on slide: ', current);
+					};
+				},
+				slidesLoaded: function() {
+					$('.caption').animate({
+						bottom:0
+					},200);
+				}
+			});
+
 		$("label").inFieldLabels();
 	});
 	
@@ -106,34 +125,6 @@
 		});
 	}
   
-	function flashIn() {
-		runIt();
-	}
-	
-		var word1 = $("#word1");
-		var word2 = $("#word2");
-		var word3 = $("#word3");
-		
-	function runIt() {
-		setInterval('word1()', 5000);
-		setInterval('word2()', 5000);
-		setInterval('word3()', 5000);
-
-	}
-	
-	function word1() {
-				word1.show('slow').delay(5000);
-				word1.hide('fast');
-	}
-
-	function word2() {
-				word2.show('slow').delay(5000);
-		word2.hide('fast');
-	}
-	function word3() {
-				word3.show('slow').delay(5000);
-		word3.hide('fast');
-	}
 	
 	function makeLoader() {
 		$('#content').addClass('loading');
@@ -296,6 +287,10 @@ showSplash();
 					<p><a href="#1" class="button big white" id="link1">m&aacute;s sobre nosotros &rsaquo;</a></p>
 					<p><a href="#1" class="button big white" id="link1_slider">fotos de nosotros &rsaquo;</a></p>
 					
+					<div id="marco">
+						
+					</div>
+					
 				</div>
 				
 				<div class="slides_container_size">		
@@ -382,8 +377,17 @@ showSplash();
 			});
 		
 	});
+	
+	$('#link1_slider').click(function() {
+		makeLoader();
+			$.get('info/agency_slider.html', function(data) {
+				$("#content_agencia").html(data);
+				clearLoader()
+				return false;
+			});
+		
+	});
 
-	flashIn();
 
 </script>
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
