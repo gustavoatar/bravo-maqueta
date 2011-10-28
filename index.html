@@ -107,7 +107,6 @@
 	}
   
 	function flashIn() {
-		alert('we got hur');
 		runIt();
 	}
 	
@@ -149,7 +148,16 @@
 <script type="text/javascript">
 
 $(function(){
+	
     $('#slider1').bxSlider({
+      mode: 'fade',
+      captions: false,
+      auto: true,
+      controls: false
+    });
+    
+    
+    $('#slider2').bxSlider({
       mode: 'fade',
       captions: false,
       auto: true,
@@ -185,14 +193,27 @@ showSplash();
 
   <div id="container">
   	<div class="header-space">
-  		<div style="float: right; width: 260px; height: auto; position: relative; right: 580px; top: 20px;">
-  			<h2 id="acierta">Acierte al primer golpe</h2>
+  		
+  		<div style="float: right; width: 260px; height: auto; position: relative; right: 510px; top: 30px;">
+  			<h2 class="title" id="acierta">Acierte al primer golpe /</h2>
   		</div>
-  		<div style="float: right; width: 200px; height: auto; position: relative; right: 575px; top: 25px;">
-	  		<span id="word1" style="display: block">rentabilidad</span>
-	  		<span id="word2" style="display: none">simbiosis</span>
-	  		<span id="word3" style="display: none">micro nichos</span>
+  		
+  		<div style="float:right; width: 250px; height: auto; position: relative; right: 30px; top: 30px;">
+  			<div id="word_container">
+  				<ul id="slider2" style="width: 200px;">
+				  <li>
+	  			<h2 class="gris">rentabilidad</h2>
+				  </li>
+				  <li>
+		  		<h2 class="gris">simbiosis</h2>
+				  </li>
+				  <li>
+		  		<h2 class="gris">micro nichos</h2>
+				  </li>
+				</ul>
+	  		</div>
   		</div>
+  		
   	</div>
       <div id="header">      	
       	<div id="header-right-space"></div>
@@ -212,7 +233,7 @@ showSplash();
 
     	<div id="sidebar">
     		
-    		<div style="margin-top: 140px; margin-left: 65px;">
+    		<div style="margin-top: 90px; margin-left: 65px;">
 	    		<ul id="slider1" style="width: 120px;">
 				  <li>
 				    <img src="img/logos/Mercedes_logo.jpg" width="100" height="100" alt="Mercedes" title="The Velvet Underground and Nico" />
@@ -229,28 +250,33 @@ showSplash();
 				</ul>
 			</div>
 			
-			<div id="contact" class="wrapper" style="margin-left: 30px; margin-top: 45px;">
+			<div id="contact" class="wrapper" style="margin-left: 30px; margin-top: 40px;">
 				<h3 class="title" style="margin-left: 20px; padding-top: 10px;">contactanos</h3>
-				<form>
-					<fieldset>
-						<p>
-							<label for="name">Su nombre</label>
-							<input name="name" type="text" id="name" />
-						</p>
-						<p>
-							<label for="email">Su email</label>
-							<input name="email" type="text" id="email"/>
-						</p>
-						<p>
-							<label for="message">Su mensaje</label>
-							<textarea name="message" rows="8" id="message"></textarea>
-							
-						</p>
-						<p>
-							<input type="submit" value="Enviar" class="button big white"/>
-						</p>
-					</fieldset>
-				</form>
+				<h2 class="title" style="margin-left: 20px; padding-top: 10px;">915170750</h2>
+				<span class="title" style="margin-left: 20px; padding-top: 10px; font-size: 10px;"> <small>simbiosis@bravopublicidad.es</small></span>	
+				<br>
+				<div id="contact_form" style="display: none;">
+					<form>
+						<fieldset>
+							<p>
+								<label for="name">Su nombre</label>
+								<input name="name" type="text" id="name" />
+							</p>
+							<p>
+								<label for="email">Su email</label>
+								<input name="email" type="text" id="email"/>
+							</p>
+							<p>
+								<label for="message">Su mensaje</label>
+								<textarea name="message" rows="8" id="message"></textarea>
+								
+							</p>
+							<p>
+								<input type="submit" value="Enviar" class="button big white"/>
+							</p>
+						</fieldset>
+					</form>
+				</div>
 			</div>
 		</div>
 
@@ -261,15 +287,15 @@ showSplash();
 				
 				<div class="slides_container_size" id="content_agencia">		
 					<h1 class="title">Su Agencia</h1>
-						<p>Marketing, Publicidad y Comunicaci&oacute;n.</p>
-						<p>Nuestra filosof&iacute;a se basa en generar la <strong>empat&iacute;a</strong> adecuada cliente-producto en cada fase o ciclo con la estrategia que generar&aacute; la <strong>simbiosis</strong> deseada.</p>
-						<p>La <strong>rentabilidad</strong> es el eje fundamental de una campa&ntilde;a publicitaria, por ello planteamos una soluci&oacute;n adaptada a su empresa y a las necesidades que posea. </p>
-						<p>Porque su <strong>tiempo</strong> es Oro y su <strong>dinero más</strong>, con Bravo Marketing y Comunicaci&oacute;n, acertar&aacute; al primer golpe en su inversi&oacute; publicitaria. </p>
-						<p>Realizamos, <strong>sin coste</strong>, el esbozo del Plan Estrat&eacute;gico de su pr&oacute; xima Campa&ntilde;a de Publicidad, <strong>sea cual sea su presupuesto</strong>.</p>
-						<p><a href="#1" class="button big white" id="link1">m&aacute;s sobre nosotros &rsaquo;</a></p>
- 						
-
-						<p class="fancy"><strong>Bienvenido a la publicidad rentable</strong>.</p>
+					<p>Marketing, Publicidad y Comunicaci&oacute;n.</p>
+					<p>Nuestra filosof&iacute;a se basa en generar la <strong>empat&iacute;a</strong> adecuada cliente-producto en cada fase o ciclo con la estrategia que generar&aacute; la <strong>simbiosis</strong> deseada.</p>
+					<p>La <strong>rentabilidad</strong> es el eje fundamental de una campa&ntilde;a publicitaria, por ello planteamos una soluci&oacute;n adaptada a su empresa y a las necesidades que posea. </p>
+					<p>Porque su <strong>tiempo</strong> es Oro y su <strong>dinero m&aacute;s</strong>, con Bravo Marketing y Comunicaci&oacute;n, acertar&aacute; al primer golpe en su inversi&oacute; publicitaria. </p>
+					<p>Realizamos, <strong>sin coste</strong>, el esbozo del Plan Estrat&eacute;gico de su pr&oacute;xima Campa&ntilde;a de Publicidad, <strong>sea cual sea su presupuesto</strong>.</p>
+					<p class="fancy">Bienvenido a la publicidad rentable.</p>
+					<p><a href="#1" class="button big white" id="link1">m&aacute;s sobre nosotros &rsaquo;</a></p>
+					<p><a href="#1" class="button big white" id="link1_slider">fotos de nosotros &rsaquo;</a></p>
+					
 				</div>
 				
 				<div class="slides_container_size">		
@@ -341,13 +367,9 @@ showSplash();
 		</div>
   	</div>
 
-    <div class="push">
-    	<!-- stuff -->
-    </div>
+
   </div> <!--! end of #container -->
-  <div class="footer" style="text-align: center">
-	<span>Doctor Castelo 10 -- 3 A. 28009. Madrid // +34 91 517 07 50 // 615 694 852 // Copyright 2011</span>
-  </div>
+
   
 <script type="text/javascript">
 

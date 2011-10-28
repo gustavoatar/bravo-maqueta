@@ -1,0 +1,66 @@
+<h1 class="title" id="page-title">Fotos de nosotros</h1>
+<p><a href="#1" class="button big white" id="goback_agencia">&lsaquo; volver</a></p>
+<div class="image_carousel">
+	<div id="foo1">
+		<a rel="fancybox" href="http://caroufredsel.frebsite.nl/examples/images/large/basketball.jpg">
+			<img src="http://caroufredsel.frebsite.nl/examples/images/small/basketball.jpg" alt="basketball" width="140" height="140" />
+		</a>
+		<a rel="fancybox" href="http://caroufredsel.frebsite.nl/examples/images/large/beachtree.jpg">
+			<img src="http://caroufredsel.frebsite.nl/examples/images/small/beachtree.jpg" alt="beachtree" width="140" height="140" />
+		</a>
+		<a rel="fancybox" href="http://caroufredsel.frebsite.nl/examples/images/large/cupcackes.jpg">
+			<img src="http://caroufredsel.frebsite.nl/examples/images/small/cupcackes.jpg" alt="cupcackes" width="140" height="140" />
+		</a>
+		<a rel="fancybox" href="http://caroufredsel.frebsite.nl/examples/images/large/hangmat.jpg">
+			<img src="http://caroufredsel.frebsite.nl/examples/images/small/hangmat.jpg" alt="hangmat" width="140" height="140" />
+		</a>
+		<a rel="fancybox" href="http://caroufredsel.frebsite.nl/examples/images/large/new_york.jpg">
+			<img src="http://caroufredsel.frebsite.nl/examples/images/small/new_york.jpg" alt="new york" width="140" height="140" />
+		</a>
+		<a rel="fancybox" href="http://caroufredsel.frebsite.nl/examples/images/large/laundry.jpg">
+			<img src="http://caroufredsel.frebsite.nl/examples/images/small/laundry.jpg" alt="laundry" width="140" height="140" />
+		</a>
+		<a rel="fancybox" href="http://caroufredsel.frebsite.nl/examples/images/large/mom_son.jpg">
+			<img src="http://caroufredsel.frebsite.nl/examples/images/small/mom_son.jpg" alt="mom son" width="140" height="140" />
+		</a>
+		<a rel="fancybox" href="http://caroufredsel.frebsite.nl/examples/images/large/picknick.jpg">
+			<img src="http://caroufredsel.frebsite.nl/examples/images/small/picknick.jpg" alt="picknick" width="140" height="140" />
+		</a>
+		<a rel="fancybox" href="http://caroufredsel.frebsite.nl/examples/images/large/shoes.jpg">
+			<img src="http://caroufredsel.frebsite.nl/examples/images/small/shoes.jpg" alt="shoes" width="140" height="140" />
+		</a>
+		<a rel="fancybox" href="http://caroufredsel.frebsite.nl/examples/images/large/paris.jpg">
+			<img src="http://caroufredsel.frebsite.nl/examples/images/small/paris.jpg" alt="paris" width="140" height="140" />
+		</a>
+		<a rel="fancybox" href="http://caroufredsel.frebsite.nl/examples/images/large/yellow_couple.jpg">
+			<img src="http://caroufredsel.frebsite.nl/examples/images/small/yellow_couple.jpg" alt="yellow couple" width="140" height="140" />
+		</a>
+	</div>
+	<div class="clearfix"></div>
+
+</div>
+
+<script type="text/javascript">
+			$("#foo1").carouFredSel();
+			$("#foo1 a").fancybox({
+				cyclic	: true,
+				onStart	: function() {
+					$("#foo1").trigger("pause");
+				},
+				onClosed: function() {
+					$("#foo1").trigger("play");
+				}
+			}); 
+			
+			
+			$('#goback_agencia').click(function() {
+				makeLoader();
+			$.get('info/agencia_content.html', function(data) {
+				$("#content_agencia").html(data);
+				clearLoader()
+				return false;
+			});
+	});
+</script>
+	
+

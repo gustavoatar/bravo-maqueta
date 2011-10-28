@@ -229,20 +229,6 @@ td { vertical-align: top; }
    ========================================================================== */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ==|== non-semantic helper classes ========================================
    Please define your styles before this section.
    ========================================================================== */
@@ -289,16 +275,17 @@ td { vertical-align: top; }
 
 
 #container {
-	background-image: url('../img/fondo_exterior.jpg');
-	background-position:bottom left;
+	background-image: url('../img/mancha_inferior.jpg');
+	background-position: bottom right;
+	background-repeat: no-repeat;
 	margin: 0;
 	padding: 0;
 	width: 100%;
 	min-height: 100%;
 	height: auto !important;
-	font-size: 16px;
+
 	height: 100%;
-	margin: 0 auto -142px; /* the bottom margin is the negative value of the footer's height */
+	margin: 0 auto; /* the bottom margin is the negative value of the footer's height */
 }
 
 #footer {
@@ -309,11 +296,9 @@ td { vertical-align: top; }
 }
 
 #sidebar {
-
-
-	width: 210px;
+	width: 250px;
 	display: block;
-	height: auto;
+	height: 500px;;
 	overflow: auto;
 	float: left;
 }
@@ -327,19 +312,19 @@ body {
 	height:100%;
 }
 .header-space {
-	height:90px;
+	height:60px;
 	overflow: auto;
 	clear: both;
 }
 
 #header {
 	position:relative;
-	height: 140px;
+	height: 90px;
 
 }
 #header-right-space {
-	width: 40px;
-	height: 140px;
+	width: 35px;
+	height: 45px;
 	float: right;
 }
 
@@ -386,26 +371,30 @@ text-shadow: 1px 1px 1px #CCCCCC;
 font-family: "ITCOfficinaSansStdBook", Arial, Helvetica, sans-serif;
 }
 
+h2.gris {
+margin: 0;
+color: #CCCCCC;
+text-shadow: 1px 1px 1px #172983;
+font-family: "ITCOfficinaSansStdBook", Arial, Helvetica, sans-serif;
+	
+}
 #main-menu {
 	margin-top: 16px;
 	font-size: 12px;
-float: right;
-margin-right: 128px;
+	float: right;
+	margin-right: 120px;
 }
 
 #header-menu-space {
 	float: right;
-	height: 112px;
+	height: 45px;
 	width: 850px;
-
-	background-image: url('../img/mancha_menu_copia_transparente.png');
-	background-repeat: no-repeat;
 	padding-top: 10px;
 	background-position:center -24%;
 
 }
 #content {
-	margin-left: 60px;
+	margin-left: 20px;
 	font-size: 16px;
 	display: block;
 	float: left; 
@@ -445,7 +434,7 @@ margin-right: 128px;
 }
 
 .fancy {
-font-size: 50px;
+font-size: 70px;
 text-align: right;
 font-family: "JellykaEstryasHandwritingRg";
 margin-right: 50px;
@@ -570,8 +559,9 @@ border-radius: 10px;
 }
 
 .loading {
-	background-image: url('../img/loading.gif');
+	background-image: url('../js/fancybox/fancy_loading.png');
 	background-position: center center;
+	background-repeat: no-repeat;
 }
 
 .image_carousel {
@@ -600,12 +590,25 @@ border-radius: 10px;
 #acierta {
 	display: block;
 }
+
 #word1 {
 	display: none;
 }
+
 #word2 {
 	display: none;
 }
+
 #word3 {
 	display: none;
+}
+
+#content_agencia {
+	background-image: url('../img/exterior.png');
+	background-position:bottom left;
+	background-repeat:no-repeat;
+}
+.gris {
+	color: #666;
+	
 }
