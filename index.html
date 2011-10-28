@@ -49,7 +49,7 @@
 			start: startSlide
 		});
 		
-		
+
 
 		$('.link').click(function() {
 		    var link = $(this).attr('href').replace('#','');
@@ -57,35 +57,7 @@
 		    return false;
 		});
 
-		$('#slides_agencia').slides({
-				preload: true,
-				preloadImage: 'img/loading.gif',
-				play: 3000,
-				pause: 2500,
-				hoverPause: true,
-				animationStart: function(current){
-					$('.caption').animate({
-						bottom:-35
-					},100);
-					if (window.console && console.log) {
-						console.log('animationStart on slide: ', current);
-					};
-				},
 
-				animationComplete: function(current){
-					$('.caption').animate({
-						bottom:0
-					},200);
-					if (window.console && console.log) {
-						console.log('animationComplete on slide: ', current);
-					};
-				},
-				slidesLoaded: function() {
-					$('.caption').animate({
-						bottom:0
-					},200);
-				}
-			});
 
 		$("label").inFieldLabels();
 	});
@@ -147,14 +119,20 @@ $(function(){
       controls: false
     });
     
-    
-    $('#slider2').bxSlider({
+        $('#slider2').bxSlider({
       mode: 'fade',
       captions: false,
       auto: true,
       controls: false
     });
-    
+
+         $('#marco').bxSlider({
+      mode: 'fade',
+      captions: false,
+      auto: true,
+      controls: false
+    });   
+
 });
 
 
@@ -283,14 +261,21 @@ showSplash();
 					<p>La <strong>rentabilidad</strong> es el eje fundamental de una campa&ntilde;a publicitaria, por ello planteamos una soluci&oacute;n adaptada a su empresa y a las necesidades que posea. </p>
 					<p>Porque su <strong>tiempo</strong> es Oro y su <strong>dinero m&aacute;s</strong>, con Bravo Marketing y Comunicaci&oacute;n, acertar&aacute; al primer golpe en su inversi&oacute; publicitaria. </p>
 					<p>Realizamos, <strong>sin coste</strong>, el esbozo del Plan Estrat&eacute;gico de su pr&oacute;xima Campa&ntilde;a de Publicidad, <strong>sea cual sea su presupuesto</strong>.</p>
-					<p class="fancy">Bienvenido a la publicidad rentable.</p>
 					<p><a href="#1" class="button big white" id="link1">m&aacute;s sobre nosotros &rsaquo;</a></p>
-					<p><a href="#1" class="button big white" id="link1_slider">fotos de nosotros &rsaquo;</a></p>
+					<p style="float:right;"><img src="img/bienvenido.png" alt="Bienvenido a la publicidad rentable" width="400" /></p>					
 					
-					<div id="marco">
-						
-					</div>
+
+					<span id="marco">		
+						<img src="http://slidesjs.com/examples/standard/img/slide-1.jpg" width="780" height="300" alt="Slide 1">
+						<img src="http://slidesjs.com/examples/standard/img/slide-2.jpg" width="780" height="300" alt="Slide 2">
+						<img src="http://slidesjs.com/examples/standard/img/slide-3.jpg" width="780" height="300" alt="Slide 3">
+						<img src="http://slidesjs.com/examples/standard/img/slide-4.jpg" width="780" height="300" alt="Slide 4">
+						<img src="http://slidesjs.com/examples/standard/img/slide-5.jpg" width="780" height="300" alt="Slide 5">
+						<img src="http://slidesjs.com/examples/standard/img/slide-6.jpg" width="780" height="300" alt="Slide 6">
+						<img src="http://slidesjs.com/examples/standard/img/slide-7.jpg" width="780" height="300" alt="Slide 7">
+					</span>
 					
+				
 				</div>
 				
 				<div class="slides_container_size">		
