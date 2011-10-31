@@ -12,7 +12,17 @@
 @import url('http://bravo.rebien.es/sites/all/themes/bravo/css/font/stylesheet.css');
 @import url('Free/stylesheet.css');
 
+@font-face {
+    font-family: 'SeanRegular';
+    src: url('font/handsean_0-webfont.eot');
+    src: url('font/handsean_0-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/handsean_0-webfont.woff') format('woff'),
+         url('font/handsean_0-webfont.ttf') format('truetype'),
+         url('font/handsean_0-webfont.svg#SeanRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
 
+}
 
 
 @font-face {
