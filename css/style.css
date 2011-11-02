@@ -601,9 +601,11 @@ border-radius: 10px;
 
 
 .loading {
-	background-image: url('../js/fancybox/fancy_loading.png');
+	background-image: url('../img/loading.gif');
 	background-position: center center;
 	background-repeat: no-repeat;
+	background-color: #FFF;
+	opacity: 0.6;
 }
 
 .image_carousel {
@@ -637,7 +639,8 @@ border-radius: 10px;
 	position: relative;
 	margin: 0;
 	padding: 0;
-	margin-left: 15px;
+	margin-left: 0;
+	margin-right: 8px;
 	margin-bottom: 4px;
 }
 
@@ -718,6 +721,7 @@ a.small {
 	background-repeat:no-repeat;
 	background-position:top;
 }
+
 .signature {
 	font-family: "SeanRegular", Arial, Helvetica, sans-serif;
 	font-size: 18px;
@@ -732,4 +736,6 @@ a.small {
 	text-align:justify;
 }
 
-
+.adjusted {
+	width: 90%; text-align: justify;
+}

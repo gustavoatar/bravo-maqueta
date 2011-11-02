@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
   <!-- scripts concatenated and minified via ant build script-->
   <script src="js/plugins.js"></script>
@@ -32,6 +32,8 @@
 			startSlide = window.location.hash.replace('#','');
 		}
 		
+
+	
 		$('#content').slides({
 			generatePagination: true,
 			pagination:true,
@@ -47,7 +49,16 @@
 			},
 			start: startSlide
 		});
-
+		$('#slides_creatividad').slides({
+			preload: false,
+			preloadImage: 'img/loading.gif',
+			play: 5000,
+			pause: 2500,
+			generatePagination: false,
+			pagination:false,
+			hoverPause: true
+		});
+		
 		$('.link').click(function() {
 		    var link = $(this).attr('href').replace('#','');
 		    $('.pagination li:eq(' + (link - 1) + ') a').click();
@@ -56,7 +67,7 @@
 		
 		$("label").inFieldLabels();
 		
-		
+
 		
 	});
 	
@@ -141,6 +152,7 @@ $(function(){
       controls: false
     });   
 
+
 });
 
 </script>
@@ -166,25 +178,21 @@ $(function(){
 
 <!-- Include Splash -->
 
-    <div id="splash" style="height: 100%; width: 100%; position: fixed; z-index: 30000; display: none; margin: 0; background: #fff; text-align: center;">
-      <img src="img/acertarse.jpg" alt="" style="margin: auto;"/>
-    </div>
+<div id="splash" style="height: 100%; width: 100%; position: fixed; z-index: 30000; display: none; margin: 0; background: #fff; text-align: center;">
+  <img src="img/acertarse.jpg" alt="" style="margin: auto;"/>
+</div>
+
 <script type="text/javascript">
-
 showSplash();
-
-
 </script>
 
-  <div id="container">
+
+<div id="container">
   	<div class="header-space">
- 
   		<div id="changer" class="pelota"></div>
-		
   		<div style="float: right; width: 260px; height: auto; position: relative; right: 510px; top: 30px;">
   			<h2 class="title" id="acierta">Acierte al primer golpe /</h2>
   		</div>
-  		
   		<div style="float:right; width: 250px; height: auto; position: relative; right: 30px; top: 30px;">
   			<div id="word_container">
   				<ul id="slider2" style="width: 200px;">
@@ -200,30 +208,22 @@ showSplash();
 				</ul>
 	  		</div>
   		</div>
-  		
-
-  		
   	</div>
       <div id="header">      	
       	<div id="header-right-space"></div>
       	<div id="header-menu-space">
 			<ul id="main-menu" class="gradientbuttons links inline clearfix">
-				
 				<li><a class="outside_link" icon="pelota" href="#1">Su Agencia</a></li>
 				<li><a class="outside_link" icon="basketball" href="#2">MKT Bravo</a></li>
 				<li><a class="outside_link" icon="notas" href="#3">Creatividad y Diseño</a></li>
 				<li><a class="outside_link" icon="billard" href="#4">Medios</a></li>
 				<li><a class="outside_link" href="#5">Exterior</a></li>
 				<li><a class="outside_link" href="#6">Marketing Online</a></li>
-				
 			</ul>
 		</div>
     </div>
-    
     <div id="main">
-
     	<div id="sidebar">
-    		
     		<div style="margin-top: 90px; margin-left: 65px;">
 	    		<ul id="slider1" style="width: 120px;">
 				  <li>
@@ -240,9 +240,6 @@ showSplash();
 				  </li>
 				</ul>
 			</div>
-			
-
-			
 			<div id="contact" class="wrapper" style="margin-left: 30px; margin-top: 40px;">
 				<h3 class="title" style="margin-left: 20px; padding-top: 10px;">contactanos</h3>
 				<h2 class="title" style="margin-left: 20px; padding-top: 10px;">915170750</h2>
@@ -272,25 +269,22 @@ showSplash();
 				</div>
 			</div>
 		</div>
-
-		
-  		
 		<div id="content">
 			<div class="slides_container">		
-				
-				<div class="slides_container_size" id="content_agencia">	
-					<div style="width: 90%; text-align: justify;">	
+				<div class="slides_container_size" id="content_agencia">
+					
+					<div class="adjusted">
 						<h1 class="title">Su Agencia</h1>
 						<div style="margin-right: 30px;">
-						<p>Marketing, Publicidad y Comunicaci&oacute;n.</p>
-						<p>Nuestra filosof&iacute;a se basa en generar la <strong>empat&iacute;a</strong> adecuada cliente-producto en cada fase o ciclo con la estrategia que generar&aacute; la <strong>simbiosis</strong> deseada.</p>
-						<p>La <strong>rentabilidad</strong> es el eje fundamental de una campa&ntilde;a publicitaria, por ello planteamos una soluci&oacute;n adaptada a su empresa y a las necesidades que posea. </p>
-						<p>Porque su <strong>tiempo</strong> es Oro y su <strong>dinero m&aacute;s</strong>, con Bravo Marketing y Comunicaci&oacute;n, acertar&aacute; al primer golpe en su inversi&oacute; publicitaria. </p>
-						<p>Realizamos, <strong>sin coste</strong>, el esbozo del Plan Estrat&eacute;gico de su pr&oacute;xima Campa&ntilde;a de Publicidad, <strong>sea cual sea su presupuesto</strong>.</p>
-						<p><a href="#1" icon="timon" class="button big grey" id="link1_slider">Filosof&iacute;a <img src="img/simbolito.png" class="mas" alt="mas informacion" width="15" /></a></p>
-						<p class="signature upit">Bienvenido a la publicidad rentable </p>					
+							<p>Marketing, Publicidad y Comunicaci&oacute;n.</p>
+							<p>Nuestra filosof&iacute;a se basa en generar la <strong>empat&iacute;a</strong> adecuada cliente-producto en cada fase o ciclo con la estrategia que generar&aacute; la <strong>simbiosis</strong> deseada.</p>
+							<p>La <strong>rentabilidad</strong> es el eje fundamental de una campa&ntilde;a publicitaria, por ello planteamos una soluci&oacute;n adaptada a su empresa y a las necesidades que posea. </p>
+							<p>Porque su <strong>tiempo</strong> es Oro y su <strong>dinero m&aacute;s</strong>, con Bravo Marketing y Comunicaci&oacute;n, acertar&aacute; al primer golpe en su inversi&oacute; publicitaria. </p>
+							<p>Realizamos, <strong>sin coste</strong>, el esbozo del Plan Estrat&eacute;gico de su pr&oacute;xima Campa&ntilde;a de Publicidad, <strong>sea cual sea su presupuesto</strong>.</p>
+							<p><a href="#1" icon="timon" class="button big grey" id="link1_slider">Filosof&iacute;a <img src="img/simbolito.png" class="mas" alt="mas informacion" width="15" /></a></p>
+							<p class="signature upit">Bienvenido a la publicidad rentable</p>					
 						</div>
-	
+
 					  <ul id="mycarousel" class="jcarousel-skin-tango">
 					    <li><img src="img/slider/su_agencia/slide1.png" height="200" alt="" /></li>
 					    <li><img src="img/slider/su_agencia/slide2.png" height="200" alt="" /></li>
@@ -301,6 +295,7 @@ showSplash();
 					    <li><img src="img/slider/su_agencia/slide7.png" height="200" alt="" /></li>
 					    <li><img src="img/slider/su_agencia/slide8.png" height="200" alt="" /></li>
 					  </ul>
+					  
 					</div>
 					
 					<script type="text/javascript">
@@ -313,84 +308,103 @@ showSplash();
 						});
 					</script>
 				
-				
 				</div>
 				
 				
 
-				<div class="slides_container_size">		
-					<h1 class="title">Marketing Bravo</h1>
-						<p>El Marketing deber&aacute; incrementar los <strong>m&aacute;rgenes</strong> cuantitativos y cualitativos de su empresa, obteniendo un m&aacute;ximo grado de satisfacci&oacute;n del cliente, reforzando o abriendo nuevos nichos o micro nichos de mercado.  Sin olvidar la imagen de marca.</p>
-						<p>La mejor publicidad es la de <strong>clientes satisfechos</strong>, no es s&oacute;lo el producto, es conocer a fondo las expectativas y necesidades de los clientes. </p>
-						<p>El Marketing es un conjunto de técnicas, con mucho de intuición y experiencia, con <strong>objetivos claros y precisos</strong>, dotado de las herramientas y metodolog&iacute;a adecuadas.</p>
-						<p><a href="#1" class="button big grey">m&aacute;s informaci&oacute;n sobre el marketing rentable &rsaquo;</a></p>
-						<p class="signature">Marketing rentable</p>
+				<div class="slides_container_size" id="content_marketing">
+					<div class="adjusted">
+						<h1 class="title">Marketing Bravo</h1>
+							<p>El Marketing deber&aacute; incrementar los <strong>m&aacute;rgenes</strong> cuantitativos y cualitativos de su empresa, obteniendo un m&aacute;ximo grado de satisfacci&oacute;n del cliente, reforzando o abriendo nuevos nichos o micro nichos de mercado.  Sin olvidar la imagen de marca.</p>
+							<p>La mejor publicidad es la de <strong>clientes satisfechos</strong>, no es s&oacute;lo el producto, es conocer a fondo las expectativas y necesidades de los clientes. </p>
+							<p>El Marketing es un conjunto de técnicas, con mucho de intuición y experiencia, con <strong>objetivos claros y precisos</strong>, dotado de las herramientas y metodolog&iacute;a adecuadas.</p>
+							<p><a href="#1" class="button big grey"><img src="img/simbolito.png" class="mas" alt="mas informacion" width="15" /> m&aacute;s informaci&oacute;n</a></p>
+							<p class="signature upit">Marketing rentable</p>
+					</div>
 				</div>
 				
 				
-				<div class="slides_container_size">		
-					<h1 class="title">Creatividad y Diseño Bravo</h1>
-						<p>El dise&ntilde;o es una <strong>parte b&aacute;sica y fundamental</strong> en todas nuestras campa&ntilde;as, requiere talento e inspiraci&oacute; n.</p>
-						<p>No es un arte, puesto que responde a unas necesidades específicas, llegar en todos los niveles a sus clientes.</p>
-						<p>Volcamos arte en el dise&ntilde;o para tener algo atractivo, evocador y est&eacute;tico a la par que funcional, legible y directo.  As&iacute; nos aseguramos tener una campa&ntilde; a &uacute;nica que se impregne en la memoria, con buen gusto y que resista el paso del tiempo generando <strong>simbiosis</strong> y <strong>empat&iacute;a</strong> a la marca.</p>
-						<p>Nuestro equipo est&aacute; compuesto por ilustradores, fot&oacute;grafos, diseñadores gr&aacute;ficos, licenciados en Bellas Artes...  Trabajando en costes m&aacute;s que razonables, se sorprender&aacute;.</p>
-						<p>Un equipo ecl&eacute;ctico capaz de realizar una campa&ntilde;a desde sus inicios con el plan de Marketing hasta la maquetaci&oacute;n final de las aplicaciones que necesite.  Trabajamos cualquier rama de dise&ntilde;o que precise, desde el dise&ntilde;o corporativo hasta el audiovisual.</p>
-						<p><a href="#1" class="button big grey">m&aacute;s informaci&oacute;n sobre la creatividad efectiva &rsaquo;</a></p>
-						<p class="signature">Bienvenido a la Creatividad efectiva.</p>
+				<div class="slides_container_size" id="content_creatividad">
+					<div class="adjusted">
+						
+						
+						<div id="slides_creatividad">
+							<div class="slides_container">
+								<a href="http://www.flickr.com/photos/jliba/4665625073/" title="145.365 - Happy Bokeh Thursday! | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-1.jpg" width="570" height="270" alt="Slide 1"></a>
+								<a href="http://www.flickr.com/photos/stephangeyer/3020487807/" title="Taxi | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-2.jpg" width="570" height="270" alt="Slide 2"></a>
+								<a href="http://www.flickr.com/photos/childofwar/2984345060/" title="Happy Bokeh raining Day | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-3.jpg" width="570" height="270" alt="Slide 3"></a>
+								<a href="http://www.flickr.com/photos/b-tal/117037943/" title="We Eat Light | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-4.jpg" width="570" height="270" alt="Slide 4"></a>
+								<a href="http://www.flickr.com/photos/bu7amd/3447416780/" title="“I must go down to the sea again, to the lonely sea and the sky; and all I ask is a tall ship and a star to steer her by.” | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-5.jpg" width="570" height="270" alt="Slide 5"></a>
+								<a href="http://www.flickr.com/photos/streetpreacher/2078765853/" title="twelve.inch | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-6.jpg" width="570" height="270" alt="Slide 6"></a>
+								<a href="http://www.flickr.com/photos/aftab/3152515428/" title="Save my love for loneliness | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-7.jpg" width="570" height="270" alt="Slide 7"></a>
+							</div>
+						</div>
+						
+						<h1 class="title">Creatividad y Diseño Bravo</h1>
+							<p>El dise&ntilde;o es una <strong>parte b&aacute;sica y fundamental</strong> en todas nuestras campa&ntilde;as, requiere talento e inspiraci&oacute; n.</p>
+							<p>No es un arte, puesto que responde a unas necesidades específicas, llegar en todos los niveles a sus clientes.</p>
+							<p>Volcamos arte en el dise&ntilde;o para tener algo atractivo, evocador y est&eacute;tico a la par que funcional, legible y directo.  As&iacute; nos aseguramos tener una campa&ntilde; a &uacute;nica que se impregne en la memoria, con buen gusto y que resista el paso del tiempo generando <strong>simbiosis</strong> y <strong>empat&iacute;a</strong> a la marca.</p>
+							<p>Nuestro equipo est&aacute; compuesto por ilustradores, fot&oacute;grafos, diseñadores gr&aacute;ficos, licenciados en Bellas Artes...  Trabajando en costes m&aacute;s que razonables, se sorprender&aacute;.</p>
+							<p>Un equipo ecl&eacute;ctico capaz de realizar una campa&ntilde;a desde sus inicios con el plan de Marketing hasta la maquetaci&oacute;n final de las aplicaciones que necesite.  Trabajamos cualquier rama de dise&ntilde;o que precise, desde el dise&ntilde;o corporativo hasta el audiovisual.</p>
+							<p><a href="#1" class="button big grey"><img src="img/simbolito.png" class="mas" alt="mas informacion" width="15" /> m&aacute;s informaci&oacute;n</a></p>
+							<p class="signature upit">Bienvenido a la Creatividad efectiva.</p>
+					</div>
 				</div>
 				
 				
-				<div class="slides_container_size">	
-					<h1 class="title">Medios</h1>
-					<p>Realizar una gesti&oacute;n de medios conlleva conocimiento, experiencia e intuici&oacute;n. </p>
-					<p>La experiencia, el an&aacute;lisis de campa&ntilde;a y la profesionalidad, son aspectos esenciales para sus intereses. </p>
-					<p>Incidir en el target adecuado es vital. Lo bordaremos con el ritmo e intensidad precisos. </p>
-					<p>Las posibilidades son ilimitadas, las decisiones muy <strong>concretas</strong> y a su <strong>medida</strong>, ajust&aacute;ndose al presupuesto inicial: </p>
-					<p>- TV: spots, sobreimpresiones, product placement, introducci&iacute;n sutil y natural en los medios, integraci&oacute;n, contenido, branding, cine, series, etc.<br>
-					- Radio: con un lenguaje propio, cu&ntilde;as, menciones, patrocinios, microespacios, reports, etc.<br>
-					- Prensa: diarios, suplementos, gr&aacute;ficos, revistas sectoriales, fotograf&iacute;a, ilustraciones, publirreportajes, encartes, etc.<br>
-					- Outdoor, generaci&oacute;n de eventos propios</p>
-					<p>Hu&iacute;mos de los automatismos y su jerga, que permiten planificar todo su presupuesto y gastarlo en tres minutos, tan habitual en el sector.</p>
-					<p><a href="#1" class="button big white">m&aacute;s informaci&oacute;n &rsaquo;</a></p>
-
+				<div class="slides_container_size" id="content_medios">
+					<div class="adjusted">
+						<h1 class="title">Medios</h1>
+						<p>Realizar una gesti&oacute;n de medios conlleva conocimiento, experiencia e intuici&oacute;n. </p>
+						<p>La experiencia, el an&aacute;lisis de campa&ntilde;a y la profesionalidad, son aspectos esenciales para sus intereses. </p>
+						<p>Incidir en el target adecuado es vital. Lo bordaremos con el ritmo e intensidad precisos. </p>
+						<p>Las posibilidades son ilimitadas, las decisiones muy <strong>concretas</strong> y a su <strong>medida</strong>, ajust&aacute;ndose al presupuesto inicial: </p>
+						<p>- TV: spots, sobreimpresiones, product placement, introducci&iacute;n sutil y natural en los medios, integraci&oacute;n, contenido, branding, cine, series, etc.<br>
+						- Radio: con un lenguaje propio, cu&ntilde;as, menciones, patrocinios, microespacios, reports, etc.<br>
+						- Prensa: diarios, suplementos, gr&aacute;ficos, revistas sectoriales, fotograf&iacute;a, ilustraciones, publirreportajes, encartes, etc.<br>
+						- Outdoor, generaci&oacute;n de eventos propios</p>
+						<p>Hu&iacute;mos de los automatismos y su jerga, que permiten planificar todo su presupuesto y gastarlo en tres minutos, tan habitual en el sector.</p>
+						<p><a href="#1" class="button big grey"><img src="img/simbolito.png" class="mas" alt="mas informacion" width="15" /> m&aacute;s informaci&oacute;n</a></p>
+						<p class="signature upit">La rentabilidad y el RIM la clave.</p>
+					</div>
 				</div>
 				
 				
-				<div class="slides_container_size">	
-					<h1 class="title">Exterior</h1>
-					<p>La publicidad exterior es de los medios m&aacute;s agradecidos, efectivos y rentables, junto a Internet, es el l&iacute;der en crecimiento en los &uacute;ltimos 4 a&ntilde;os.</p>
-					<p>Requiere unas t&eacute;cnicas y conocimientos espec&iacute;ficos, claro, sencillo, atractivo, concreto, directo y agradable.</p>
-					<p>Sus grandes dimensiones son ideales para impactar.   Tenemos 6 segundos para desarrollar el sistema AIDA.</p>
-					<p>No puede ni debe saturar. El mensaje debe ser <strong>&uacute;nico</strong>, corto y conciso, atrayente, seductor&aacute; y todo en dos segundos. </p>
-					<p>D&oacute;nde vive, trabaja, compra y disfruta del ocio nuestro <strong>grupo-target</strong>?  Campa&ntilde;a direccional, corporativa, semanal, quincenal, mensual, anual, ...</p>
-					<p>Un target claro ser&aacute; la <strong>clave</strong> para sugerir y presupuestar una campa&ntilde;a de publicidad exterior. </p>
-					<p>El sector es uno de los pocos en constante crecimiento y <strong>generador</strong> de beneficios, entre los medios tradicionales.</p>
-					<p>Tendremo la l&iacute;nea de publicidad masiva (Above the line ATL) o la selectiva BTL.</p>
-						<p><a href="#1" class="button big grey">m&aacute;s informaci&oacute;n sobre rentabilidad del exterior &rsaquo;</a></p>
-					<p class="signature">Bienvenidos a la rentabilidad, del Exterior.</p>
+				<div class="slides_container_size" id="content_exterior">
+					<div class="adjusted">
+						<h1 class="title">Exterior</h1>
+						<p>La publicidad exterior es de los medios m&aacute;s agradecidos, efectivos y rentables, junto a Internet, es el l&iacute;der en crecimiento en los &uacute;ltimos 4 a&ntilde;os.</p>
+						<p>Requiere unas t&eacute;cnicas y conocimientos espec&iacute;ficos, claro, sencillo, atractivo, concreto, directo y agradable.</p>
+						<p>Sus grandes dimensiones son ideales para impactar.   Tenemos 6 segundos para desarrollar el sistema AIDA.</p>
+						<p>No puede ni debe saturar. El mensaje debe ser <strong>&uacute;nico</strong>, corto y conciso, atrayente, seductor&aacute; y todo en dos segundos. </p>
+						<p>D&oacute;nde vive, trabaja, compra y disfruta del ocio nuestro <strong>grupo-target</strong>?  Campa&ntilde;a direccional, corporativa, semanal, quincenal, mensual, anual, ...</p>
+						<p>Un target claro ser&aacute; la <strong>clave</strong> para sugerir y presupuestar una campa&ntilde;a de publicidad exterior. </p>
+						<p>El sector es uno de los pocos en constante crecimiento y <strong>generador</strong> de beneficios, entre los medios tradicionales.</p>
+						<p>Tendremo la l&iacute;nea de publicidad masiva (Above the line ATL) o la selectiva BTL.</p>
+						<p><a href="#1" class="button big grey"><img src="img/simbolito.png" class="mas" alt="mas informacion" width="15" /> m&aacute;s informaci&oacute;n</a></p>
+						<p class="signature upit">Bienvenidos a la rentabilidad, del Exterior.</p>
+					</div>
 				</div>
 				
 				
-				<div class="slides_container_size">	
-					<h1 class="title">Exterior</h1>
-					<p>Es un sector en auge y juega un papel cada vez m&aacute;s vital en el mundo de la publicidad. </p>
-					<p>La tecnolog&iacute;a cambia constantemente, resultando cada vez m&aacute;s complicada de comprender y manejar. </p>
-					<p>Las aplicaciones est&aacute;n en cont&iacute;nua evoluci&oacute;n. </p>
-					<p>Bravo Online adaptar&aacute; las id&oacute;neas, buscando el ratio de retorno adecuado y la rentabilidad por click.</p>
-					<p>Aunque pueden ser dif&iacute;ciles de entender, los nuevos medios online son esenciales para una empresa o individual. </p>
-					<p>Usted llegar&aacute; a disfrutar de todos los beneficios de estas mismas tecnolog&iacute;as con el conocimiento e informaci&oacute;n adecuados, y para ello ponemos a su disposici&oacute;n un plan de marketing espec&iacute;fico para su empresa.</p>
-					<p><a href="#1" class="button big grey">m&aacute;s informaci&oacute;n sobre nuevas tecnologias &rsaquo;</a></p>
-					<p class="signature">Las Nuevas Tecnolog&iacute;as son el presente y futuro de su negocio.</p>
-
+				<div class="slides_container_size" id="content_online">
+					<div class="adjusted">
+						<h1 class="title">Nuevas tecnolog&iacute;as</h1>
+						<p>Es un sector en auge y juega un papel cada vez m&aacute;s vital en el mundo de la publicidad. </p>
+						<p>La tecnolog&iacute;a cambia constantemente, resultando cada vez m&aacute;s complicada de comprender y manejar. </p>
+						<p>Las aplicaciones est&aacute;n en cont&iacute;nua evoluci&oacute;n. </p>
+						<p>Bravo Online adaptar&aacute; las id&oacute;neas, buscando el ratio de retorno adecuado y la rentabilidad por click.</p>
+						<p>Aunque pueden ser dif&iacute;ciles de entender, los nuevos medios online son esenciales para una empresa o individual. </p>
+						<p>Usted llegar&aacute; a disfrutar de todos los beneficios de estas mismas tecnolog&iacute;as con el conocimiento e informaci&oacute;n adecuados, y para ello ponemos a su disposici&oacute;n un plan de marketing espec&iacute;fico para su empresa.</p>
+						<p><a href="#1" class="button big grey"><img src="img/simbolito.png" class="mas" alt="mas informacion" width="15" /> m&aacute;s informaci&oacute;n</a></p>
+						<p class="signature upit">Las Nuevas Tecnolog&iacute;as son el presente y futuro de su negocio.</p>
+					</div>
 				</div>
+				
 			</div>
 		</div>
   	</div>
-
-
-  </div> <!--! end of #container -->
-
-  
+</div> <!--! end of #container -->
 <script type="text/javascript">
 
 	$('#link1').click(function() {
@@ -415,6 +429,7 @@ showSplash();
 		$("#changer").addClass(icon);
 	})
 	
+
 </script>
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
