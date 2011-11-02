@@ -60,7 +60,7 @@
 			'buttonNextHTML' : null,
 			'buttonPrevHTML' : null,
 			'auto' : 1,
-			'animation' : "slow",
+			'animation' : 8000,
 			'wrap' : "circular"
 		});
 		
@@ -156,6 +156,16 @@ $(function(){
   <link rel="stylesheet" href="js/fancybox/jquery.fancybox-1.3.4.css">
   <link rel="stylesheet" href="css/style.css">
 
+<style>
+ .jcarousel-skin-tango .jcarousel-container-horizontal {
+	width: 98%;
+	height: 210px;
+}
+.jcarousel-skin-tango .jcarousel-clip-horizontal {
+	width: 100%;
+	height: 200px;
+}
+</style>
 
 </head>
 <body>
@@ -274,31 +284,30 @@ showSplash();
 		<div id="content">
 			<div class="slides_container">		
 				
-				<div class="slides_container_size" id="content_agencia">		
-					<h1 class="title">Su Agencia</h1>
-					<div style="margin-right: 30px;">
-					<p>Marketing, Publicidad y Comunicaci&oacute;n.</p>
-					<p>Nuestra filosof&iacute;a se basa en generar la <strong>empat&iacute;a</strong> adecuada cliente-producto en cada fase o ciclo con la estrategia que generar&aacute; la <strong>simbiosis</strong> deseada.</p>
-					<p>La <strong>rentabilidad</strong> es el eje fundamental de una campa&ntilde;a publicitaria, por ello planteamos una soluci&oacute;n adaptada a su empresa y a las necesidades que posea. </p>
-					<p>Porque su <strong>tiempo</strong> es Oro y su <strong>dinero m&aacute;s</strong>, con Bravo Marketing y Comunicaci&oacute;n, acertar&aacute; al primer golpe en su inversi&oacute; publicitaria. </p>
-					<p>Realizamos, <strong>sin coste</strong>, el esbozo del Plan Estrat&eacute;gico de su pr&oacute;xima Campa&ntilde;a de Publicidad, <strong>sea cual sea su presupuesto</strong>.</p>
-					<p><a href="#1" class="button big grey" id="link1">Filosof&iacute;a <img src="img/simbolito.png" class="mas" alt="mas informacion" width="15" /></a></p>
-					<p class="signature">Bienvenido a la publicidad rentable </p>					
+				<div class="slides_container_size" id="content_agencia">	
+					<div style="width: 90%; text-align: justify;">	
+						<h1 class="title">Su Agencia</h1>
+						<div style="margin-right: 30px;">
+						<p>Marketing, Publicidad y Comunicaci&oacute;n.</p>
+						<p>Nuestra filosof&iacute;a se basa en generar la <strong>empat&iacute;a</strong> adecuada cliente-producto en cada fase o ciclo con la estrategia que generar&aacute; la <strong>simbiosis</strong> deseada.</p>
+						<p>La <strong>rentabilidad</strong> es el eje fundamental de una campa&ntilde;a publicitaria, por ello planteamos una soluci&oacute;n adaptada a su empresa y a las necesidades que posea. </p>
+						<p>Porque su <strong>tiempo</strong> es Oro y su <strong>dinero m&aacute;s</strong>, con Bravo Marketing y Comunicaci&oacute;n, acertar&aacute; al primer golpe en su inversi&oacute; publicitaria. </p>
+						<p>Realizamos, <strong>sin coste</strong>, el esbozo del Plan Estrat&eacute;gico de su pr&oacute;xima Campa&ntilde;a de Publicidad, <strong>sea cual sea su presupuesto</strong>.</p>
+						<p><a href="#1" icon="timon" class="button big grey" id="link1">Filosof&iacute;a <img src="img/simbolito.png" class="mas" alt="mas informacion" width="15" /></a></p>
+						<p class="signature">Bienvenido a la publicidad rentable </p>					
+						</div>
+	
+					  <ul id="mycarousel" class="jcarousel-skin-tango">
+					    <li><img src="img/slider/su_agencia/slide1.png" height="200" alt="" /></li>
+					    <li><img src="img/slider/su_agencia/slide2.png" height="200" alt="" /></li>
+					    <li><img src="img/slider/su_agencia/slide3.png" height="200" alt="" /></li>
+					    <li><img src="img/slider/su_agencia/slide4.png" height="200" alt="" /></li>
+					    <li><img src="img/slider/su_agencia/slide5.png" height="200" alt="" /></li>
+					    <li><img src="img/slider/su_agencia/slide6.png" height="200" alt="" /></li>
+					    <li><img src="img/slider/su_agencia/slide7.png" height="200" alt="" /></li>
+					    <li><img src="img/slider/su_agencia/slide8.png" height="200" alt="" /></li>
+					  </ul>
 					</div>
-
-				  <ul id="mycarousel" class="jcarousel-skin-tango">
-				    <li><img src="http://static.flickr.com/66/199481236_dc98b5abb3_s.jpg" width="75" height="75" alt="" /></li>
-				    <li><img src="http://static.flickr.com/75/199481072_b4a0d09597_s.jpg" width="75" height="75" alt="" /></li>
-				    <li><img src="http://static.flickr.com/57/199481087_33ae73a8de_s.jpg" width="75" height="75" alt="" /></li>
-				    <li><img src="http://static.flickr.com/77/199481108_4359e6b971_s.jpg" width="75" height="75" alt="" /></li>
-				    <li><img src="http://static.flickr.com/58/199481143_3c148d9dd3_s.jpg" width="75" height="75" alt="" /></li>
-				    <li><img src="http://static.flickr.com/72/199481203_ad4cdcf109_s.jpg" width="75" height="75" alt="" /></li>
-				    <li><img src="http://static.flickr.com/58/199481218_264ce20da0_s.jpg" width="75" height="75" alt="" /></li>
-				    <li><img src="http://static.flickr.com/69/199481255_fdfe885f87_s.jpg" width="75" height="75" alt="" /></li>
-				    <li><img src="http://static.flickr.com/60/199480111_87d4cb3e38_s.jpg" width="75" height="75" alt="" /></li>
-				    <li><img src="http://static.flickr.com/70/229228324_08223b70fa_s.jpg" width="75" height="75" alt="" /></li>
-				  </ul>
-					
 				
 				</div>
 				
@@ -385,20 +394,25 @@ showSplash();
 	
 	$('#link1_slider').click(function() {
 		makeLoader();
-			$.get('info/agency_slider.html', function(data) {
-				$("#content_agencia").html(data);
-				clearLoader()
-				return false;
-			});
+		$.get('info/agencia.html', function(data) {
+			$("#content_agencia").html(data);
+			clearLoader()
+			return false;
+		});
 	});
 	
 	$("#main-menu a").click(function() {
 		var icon = $(this).attr("icon");
 		$("#changer").removeClass('pelota notas basketball timon billard')
 		$("#changer").addClass(icon);
-		
 	})
 
+	$("#link1").click(function() {
+		var icon = $(this).attr("icon");
+		$("#changer").removeClass('pelota notas basketball timon billard')
+		$("#changer").addClass(icon);
+	})
+	
 </script>
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
