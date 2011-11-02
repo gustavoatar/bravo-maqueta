@@ -714,15 +714,18 @@ a.small {
 }
 
 .timon {
-	background-image: url('../img/acierte_mkt.jpg');
+	background-image: url('../img/timon_suagencia_filosofia.gif');
 	background-repeat:no-repeat;
 	background-position:top;
 }
 .signature {
-	margin-top: -45px;
 	font-family: "SeanRegular", Arial, Helvetica, sans-serif;
 	font-size: 18px;
 	float: right;
+}
+
+.upit {
+	margin-top: -45px;
 }
 
 .slides_container_size p {
