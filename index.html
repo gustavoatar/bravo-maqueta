@@ -11,19 +11,17 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
   <!-- scripts concatenated and minified via ant build script-->
-  <script src="js/plugins.js"></script>
-  <script src="js/script.js"></script>
+
   <script src="js/libs/slides.jquery.js"></script>
   <script src="js/libs/jquery.jcarousel.js"></script>
-  <script src="js/libs/jquery.infieldlabel.js"></script>
   <script src="js/libs/jquery.bxSlider.min.js"></script>
-  <script src="js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+
 
 
   <script>
   
 	$(function(){
-				
+
 		setSizes();	
 
 		var startSlide = 1;
@@ -32,8 +30,6 @@
 			startSlide = window.location.hash.replace('#','');
 		}
 		
-
-	
 		$('#content').slides({
 			generatePagination: true,
 			pagination:true,
@@ -49,25 +45,17 @@
 			},
 			start: startSlide
 		});
-		$('#slides_creatividad').slides({
-			preload: false,
-			preloadImage: 'img/loading.gif',
-			play: 5000,
-			pause: 2500,
-			generatePagination: false,
-			pagination:false,
-			hoverPause: true
-		});
 		
-		$('.link').click(function() {
-		    var link = $(this).attr('href').replace('#','');
-		    $('.pagination li:eq(' + (link - 1) + ') a').click();
-		    return false;
-		});
+		slider = "agencia";
 		
-		$("label").inFieldLabels();
-		
-
+		if(slider) {
+			var slider_url = 'info/slider_'+slider+'.html';
+			var slider_div = 'slider_'+slider;
+			
+			$.get(slider_url, function(data) {
+				$("#"+slider_div).html(data);
+			});
+		}
 		
 	});
 	
@@ -143,7 +131,8 @@ $(function(){
       auto: true,
       controls: false
     });
-
+    
+	
    $('#marco').bxSlider({
       mode: 'fade',
       captions: false,
@@ -151,14 +140,9 @@ $(function(){
       controls: false
     });   
 
-	$("#mycarousel").jcarousel({
-		'buttonNextHTML' : null,
-		'buttonPrevHTML' : null,
-		'auto' : 1,
-		'animation' : 8000,
-		'wrap' : "circular"
-	});
 
+
+	
 });
 
 </script>
@@ -177,6 +161,12 @@ $(function(){
 	width: 100%;
 	height: 200px;
 }
+
+.jcarousel-skin-creatividad .jcarousel-container-horizontal {
+	width: 100%;
+	height: 200px;
+}
+
 </style>
 
 </head>
@@ -201,6 +191,7 @@ showSplash();
   		</div>
   		<div style="float:right; width: 150px; height: auto; position: relative; right: -100px; top: 30px;">
   			<div id="word_container">
+  				
   				<ul id="slider2" style="width: 200px;">
 				  <li>
 	  			<h2 class="gris">rentabilidad</h2>
@@ -219,10 +210,10 @@ showSplash();
       	<div id="header-right-space"></div>
       	<div id="header-menu-space">
 			<ul id="main-menu" class="gradientbuttons links inline clearfix">
-				<li><a class="outside_link" icon="pelota" href="#1">Su Agencia</a></li>
+				<li><a class="outside_link" slider="agencia" icon="pelota" href="#1">Su Agencia</a></li>
 				<li><a class="outside_link" icon="basketball" href="#2">MKT Bravo</a></li>
-				<li><a class="outside_link" icon="notas" href="#3">Creatividad y Diseño</a></li>
-				<li><a class="outside_link" icon="billard" href="#4">Medios</a></li>
+				<li><a class="outside_link" slider="creatividad" icon="notas" href="#3">Creatividad y Diseño</a></li>
+				<li><a class="outside_link" slider="medios" icon="billard" href="#4">Medios</a></li>
 				<li><a class="outside_link" href="#5">Exterior</a></li>
 				<li><a class="outside_link" href="#6">Marketing Online</a></li>
 			</ul>
@@ -265,7 +256,6 @@ showSplash();
 							<p>
 								<label for="message">Su mensaje</label>
 								<textarea name="message" rows="8" id="message"></textarea>
-								
 							</p>
 							<p>
 								<input type="submit" value="Enviar" class="button big white"/>
@@ -278,23 +268,16 @@ showSplash();
 		<div id="content">
 			<div class="slides_container">		
 				<div class="slides_container_size" id="content_agencia">
-					
 					<div class="adjusted">
 						<h1 class="title">Su Agencia</h1>
 						<div style="margin-right: 15px;">
 							<p>Marketing, Publicidad y Comunicaci&oacute;n.</p>
 							<p>Nuestra filosof&iacute;a se basa en generar la <strong>empat&iacute;a</strong> adecuada cliente-producto en cada fase o ciclo con la estrategia que generar&aacute; la <strong>simbiosis</strong> deseada.</p>
-				
-							  <ul id="mycarousel" class="jcarousel-skin-tango">
-							    <li><img src="img/slider/su_agencia/slide1.png" height="200" alt="" /></li>
-							    <li><img src="img/slider/su_agencia/slide2.png" height="200" alt="" /></li>
-							    <li><img src="img/slider/su_agencia/slide3.png" height="200" alt="" /></li>
-							    <li><img src="img/slider/su_agencia/slide4.png" height="200" alt="" /></li>
-							    <li><img src="img/slider/su_agencia/slide5.png" height="200" alt="" /></li>
-							    <li><img src="img/slider/su_agencia/slide6.png" height="200" alt="" /></li>
-							    <li><img src="img/slider/su_agencia/slide7.png" height="200" alt="" /></li>
-							    <li><img src="img/slider/su_agencia/slide8.png" height="200" alt="" /></li>
-							  </ul>
+
+							<div id="slider_agencia" style="height: 200px;">
+								
+							</div>
+
 					  
 							<p>La <strong>rentabilidad</strong> es el eje fundamental de una campa&ntilde;a publicitaria, por ello planteamos una soluci&oacute;n adaptada a su empresa y a las necesidades que posea. </p>
 							<p>Porque su <strong>tiempo</strong> es Oro y su <strong>dinero m&aacute;s</strong>, con Bravo Marketing y Comunicaci&oacute;n, acertar&aacute; al primer golpe en su inversi&oacute; publicitaria. </p>
@@ -302,15 +285,7 @@ showSplash();
 							<p><a href="#1" icon="timon" class="button big grey" id="link1_slider">Filosof&iacute;a <img src="img/simbolito.png" class="mas" alt="mas informacion" width="15" /></a></p>
 							<p class="signature upit">Bienvenido a la publicidad rentable</p>					
 						</div>
-
-
-					  
 					</div>
-					
-					<script type="text/javascript">
-
-					</script>
-				
 				</div>
 				
 				
@@ -330,20 +305,11 @@ showSplash();
 				<div class="slides_container_size" id="content_creatividad">
 					<div class="adjusted">
 						
-						
-						<div id="slides_creatividad">
-							<div class="slides_container">
-								<a href="http://www.flickr.com/photos/jliba/4665625073/" title="145.365 - Happy Bokeh Thursday! | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-1.jpg" width="570" height="270" alt="Slide 1"></a>
-								<a href="http://www.flickr.com/photos/stephangeyer/3020487807/" title="Taxi | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-2.jpg" width="570" height="270" alt="Slide 2"></a>
-								<a href="http://www.flickr.com/photos/childofwar/2984345060/" title="Happy Bokeh raining Day | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-3.jpg" width="570" height="270" alt="Slide 3"></a>
-								<a href="http://www.flickr.com/photos/b-tal/117037943/" title="We Eat Light | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-4.jpg" width="570" height="270" alt="Slide 4"></a>
-								<a href="http://www.flickr.com/photos/bu7amd/3447416780/" title="“I must go down to the sea again, to the lonely sea and the sky; and all I ask is a tall ship and a star to steer her by.” | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-5.jpg" width="570" height="270" alt="Slide 5"></a>
-								<a href="http://www.flickr.com/photos/streetpreacher/2078765853/" title="twelve.inch | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-6.jpg" width="570" height="270" alt="Slide 6"></a>
-								<a href="http://www.flickr.com/photos/aftab/3152515428/" title="Save my love for loneliness | Flickr - Photo Sharing!" target="_blank"><img src="http://slidesjs.com/examples/standard/img/slide-7.jpg" width="570" height="270" alt="Slide 7"></a>
-							</div>
-						</div>
-						
-						<h1 class="title">Creatividad y Diseño Bravo</h1>
+					  <div id="slider_creatividad" style="height: 200px;">
+					  	
+					  </div>
+
+					 <h1 class="title">Creatividad y Diseño Bravo</h1>
 							<p>El dise&ntilde;o es una <strong>parte b&aacute;sica y fundamental</strong> en todas nuestras campa&ntilde;as, requiere talento e inspiraci&oacute; n.</p>
 							<p>No es un arte, puesto que responde a unas necesidades específicas, llegar en todos los niveles a sus clientes.</p>
 							<p>Volcamos arte en el dise&ntilde;o para tener algo atractivo, evocador y est&eacute;tico a la par que funcional, legible y directo.  As&iacute; nos aseguramos tener una campa&ntilde; a &uacute;nica que se impregne en la memoria, con buen gusto y que resista el paso del tiempo generando <strong>simbiosis</strong> y <strong>empat&iacute;a</strong> a la marca.</p>
@@ -369,6 +335,10 @@ showSplash();
 						<p>Hu&iacute;mos de los automatismos y su jerga, que permiten planificar todo su presupuesto y gastarlo en tres minutos, tan habitual en el sector.</p>
 						<p><a href="#1" class="button big grey"><img src="img/simbolito.png" class="mas" alt="mas informacion" width="15" /> m&aacute;s informaci&oacute;n</a></p>
 						<p class="signature upit">La rentabilidad y el RIM la clave.</p>
+						
+					  <div id="slider_medios" style="height: 200px;">
+					  </div>
+					  
 					</div>
 				</div>
 				
@@ -421,11 +391,25 @@ showSplash();
 			return false;
 		});
 	});
+	
 	$("#main-menu a").click(function() {
 		var icon = $(this).attr("icon");
+		var slider = $(this).attr("slider");
+
 		$("#changer").removeClass('pelota notas basketball timon billard')
 		$("#changer").addClass(icon);
+		
+		if(slider) {
+			var slider_url = 'info/slider_'+slider+'.html';
+			var slider_div = 'slider_'+slider;
+			
+			$.get(slider_url, function(data) {
+				$("#"+slider_div).html(data);
+			});
+		}
+		
 	});
+	
 	$("#link1_slider").click(function() {
 		var icon = $(this).attr("icon");
 		$("#changer").removeClass('pelota notas basketball timon billard')
