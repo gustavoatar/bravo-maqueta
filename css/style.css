@@ -322,18 +322,19 @@ body {
 	height:100%;
 }
 .header-space {
-	height:60px;
-	overflow: auto;
+	height:55px;
+	overflow:hidden;
 	clear: both;
 }
 
 #header {
 	position:relative;
-	height: 90px;
+	height: 75px;
 
 }
+
 #header-right-space {
-	width: 35px;
+	width: 0;
 	height: 45px;
 	float: right;
 }
@@ -392,13 +393,13 @@ font-family: "ITCOfficinaSansStdBook", Arial, Helvetica, sans-serif;
 	margin-top: 16px;
 	font-size: 12px;
 	float: right;
-	margin-right: 120px;
+	margin-right: 110px;
 }
 
 #header-menu-space {
 	float: right;
 	height: 45px;
-	width: 850px;
+	width: 800px;
 	padding-top: 10px;
 	background-position:center -24%;
 
@@ -684,7 +685,7 @@ a.small {
 	width: 60px;
 	height: 70px;
 	position: absolute;
-	right: 345px;
+	right: 105px;
 	top: 10px;
 	filter:alpha(opacity=50);
 	-moz-opacity:0.5;
@@ -737,5 +738,5 @@ a.small {
 }
 
 .adjusted {
-	width: 90%; text-align: justify;
+	width: 94%; text-align: justify;
 }
