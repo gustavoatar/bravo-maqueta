@@ -274,7 +274,7 @@ showSplash();
 							<p>Marketing, Publicidad y Comunicaci&oacute;n.</p>
 							<p>Nuestra filosof&iacute;a se basa en generar la <strong>empat&iacute;a</strong> adecuada cliente-producto en cada fase o ciclo con la estrategia que generar&aacute; la <strong>simbiosis</strong> deseada.</p>
 
-							<div id="slider_agencia" style="height: 200px;">
+							<div id="slider_agencia" style="height:200px;">
 								
 							</div>
 
@@ -305,7 +305,7 @@ showSplash();
 				<div class="slides_container_size" id="content_creatividad">
 					<div class="adjusted">
 						
-					  <div id="slider_creatividad" style="height: 200px;">
+					  <div id="slider_creatividad" style="">
 					  	
 					  </div>
 
@@ -405,6 +405,7 @@ showSplash();
 			
 			$.get(slider_url, function(data) {
 				$("#"+slider_div).html(data);
+				setSizes();	
 			});
 		}
 		

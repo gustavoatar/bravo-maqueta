@@ -739,6 +739,7 @@ a.small {
 
 .adjusted {
 	width: 94%; text-align: justify;
+	min-height:1000px; !important; 
 }
 
 

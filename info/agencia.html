@@ -37,6 +37,10 @@
 			$.get('info/agencia_content.html', function(data) {
 				$("#content_agencia").html(data);
 				clearLoader()
+				
+					$.get('info/slider_agencia.html', function(data) {
+						$("#slider_agencia").html(data);
+					});
 				return false;
 			});
 	});
