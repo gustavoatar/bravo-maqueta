@@ -5,6 +5,7 @@
 	<p>Nuestra filosof&iacute;a se basa en generar la <strong>empat&iacute;a</strong>, <strong>simbiosis</strong> y <strong>rentabilidad</strong> desde la primera campa&ntilde;a.</p>
 	<p>Conseguimos <strong>optimizar la campa&ntilde;a</strong> con la creatividad y soportes adecuados. </p>
 	<p>Es fundamental para nosotros aplicar a cada Cliente y en cada Campa&ntilde;a, un m&eacute;todo y sistema espec&iacute;fico.  <strong>Control, seguimiento, evaluaci&oacute;n</strong> peri&oacute;dica, RIM.</p>
+	
 	<ul id="carousel_filosofia" class="jcarousel-skin-tango">
 	    <li><img src="img/slider/filosofia/slide1.jpg" alt="" /></li>
 	    <li><img src="img/slider/filosofia/slide2.jpg" alt="" /></li>
@@ -15,6 +16,7 @@
 	    <li><img src="img/slider/filosofia/slide7.jpg" alt="" /></li>
 	    <li><img src="img/slider/filosofia/slide8.jpg" alt="" /></li>
 	</ul>
+	
 	<p>La <strong>planificaci&oacute;n</strong> y la compra de medios desde nuestra propia Central, con gesti&oacute;n independiente, profesional y ecl&eacute;ctica, genera confianza, honestidad, profesionalidad y rentabilidad a nuestros clientes.</p>
 	<p>Obtener una perfecta comunicaci&oacute;n Mercado-cliente-Agencia.  Conocer e investigar todos los procesos en tiempo real es fundamental. </p>
 	<p>Tenemos claro que la gesti&oacute;n de Marketing, Comunicaci&oacute;n y Publicidad son hechos concatenados y progresivos que precisan obtener la <strong>simbiosis</strong> con sus clientes.  Tenemos que obtener los resultados previstos al menor coste. </p>
