@@ -69,17 +69,17 @@
    		var containerWidth = $("#container").width();
    		var containerHeight = $("#container").height();
 
-   		$("#content").width(containerWidth - 310);
-   		$("#content").height(containerHeight - 210);
+   		$("#content").width(containerWidth - 270);
+   		$("#content").height(containerHeight - 130);
 
    		//$(".slides_container div").width(containerWidth - 210);
-   		$(".slides_container_size").width(containerWidth - 330);
+   		$(".slides_container_size").width(containerWidth - 290);
 	}
 
 
 	function showSplash() {
 		var interrupt;
-		window.setTimeout(hideSplash, 4000);
+		window.setTimeout(hideSplash, 2000);
 		$('#splash').show().click(function() {
 			hideSplash();
 		});
@@ -191,16 +191,15 @@ showSplash();
   		</div>
   		<div style="float:right; width: 150px; height: auto; position: relative; right: -100px; top: 30px;">
   			<div id="word_container">
-  				
   				<ul id="slider2" style="width: 200px;">
-				  <li>
-	  			<h2 class="gris">rentabilidad</h2>
+				  <li style="float:right; text-align:right;">
+	  				<h2 class="gris">rentabilidad</h2>
 				  </li>
-				  <li>
-		  		<h2 class="gris">simbiosis</h2>
+				  <li style="float:right; text-align:right;">
+		  			<h2 class="gris">simbiosis</h2>
 				  </li>
-				  <li>
-		  		<h2 class="gris">micro nichos</h2>
+				  <li style="float:right; text-align:right;">
+		  			<h2 class="gris">micro nichos</h2>
 				  </li>
 				</ul>
 	  		</div>
@@ -221,7 +220,9 @@ showSplash();
     </div>
     <div id="main">
     	<div id="sidebar">
-    		<div style="margin-top: 130px; margin-left: 65px;">
+    		
+    		
+    		<div class="logos_laterial">
 	    		<ul id="slider1" style="width: 120px;">
 				  <li>
 				    <img src="img/logos/Mercedes_logo.jpg" width="100" height="100" alt="Mercedes" title="The Velvet Underground and Nico" />
@@ -237,7 +238,8 @@ showSplash();
 				  </li>
 				</ul>
 			</div>
-			<div id="contact" class="wrapper" style="margin-left: 30px; margin-top: 40px;">
+			
+			<div id="contact" class="wrapper contact_laterial">
 				<h3 class="title" style="margin-left: 20px; padding-top: 10px;">contactanos</h3>
 				<h2 class="title" style="margin-left: 20px; padding-top: 10px;">915170750</h2>
 				<span class="title" style="margin-left: 20px; padding-top: 10px; font-size: 10px;"><small><a class="small" href="mailto:simbiosis@bravopublicidad.es?subject=Consulta">simbiosis@bravopublicidad.es</a></small></span>	
@@ -264,27 +266,30 @@ showSplash();
 					</form>
 				</div>
 			</div>
+
+			<div id="offer" class="wrapper offer_laterial">
+				<h2 class="title white" style="margin-left: 20px; padding-top: 10px;">FREE ONLINE</h2>
+				<h3 class="white" style="margin-left: 20px; padding-top: 10px;">Encontrar servicios gratis en nuestra web free.bravopublicidad.es</h3>
+
+			</div>
+			
 		</div>
 		<div id="content">
 			<div class="slides_container">		
 				<div class="slides_container_size" id="content_agencia">
 					<div class="adjusted">
-						<h1 class="title">Su Agencia</h1>
+						<h1 class="title">Su Agencia </h1>
 						<div style="margin-right: 15px;">
-							<p>Marketing, Publicidad y Comunicaci&oacute;n.</p>
 							<p>Nuestra filosof&iacute;a se basa en generar la <strong>empat&iacute;a</strong> adecuada cliente-producto en cada fase o ciclo con la estrategia que generar&aacute; la <strong>simbiosis</strong> deseada.</p>
-
-							<div id="slider_agencia" style="height:200px;">
-								
+							<div id="slider_agencia" style="height:200px;">	
 							</div>
-
-					  
 							<p>La <strong>rentabilidad</strong> es el eje fundamental de una campa&ntilde;a publicitaria, por ello planteamos una soluci&oacute;n adaptada a su empresa y a las necesidades que posea. </p>
 							<p>Porque su <strong>tiempo</strong> es Oro y su <strong>dinero m&aacute;s</strong>, con Bravo Marketing y Comunicaci&oacute;n, acertar&aacute; al primer golpe en su inversi&oacute; publicitaria. </p>
 							<p>Realizamos, <strong>sin coste</strong>, el esbozo del Plan Estrat&eacute;gico de su pr&oacute;xima Campa&ntilde;a de Publicidad, <strong>sea cual sea su presupuesto</strong>.</p>
-							<p><a href="#1" icon="timon" class="button big grey" id="link1_slider">Filosof&iacute;a <img src="img/simbolito.png" class="mas" alt="mas informacion" width="15" /></a></p>
+							<p><a href="#1" icon="timon" class="button big grey" id="link1_slider"> <img src="img/simbolito.png" class="mas" alt="mas informacion" width="15" /> Filosof&iacute;a</a></p>
 							<p class="signature upit">Bienvenido a la publicidad rentable</p>					
 						</div>
+						
 					</div>
 				</div>
 				

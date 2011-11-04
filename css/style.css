@@ -557,16 +557,30 @@ form label {
 form p { position: relative; margin: 10px 0; }
 form p label { position: absolute; top: 6px; left: 6px;}
 
-#contact{
+#offer{
  	width: 180px;
   -moz-box-shadow: 0 0 6px #ccc;
   -webkit-box-shadow: 0 0 6px #ccc;
   box-shadow: 0 0 6px #ccc;
+padding-right: 15px;
+-moz-border-radius: 10px;
+padding-bottom: 15px;
 
+-webkit-border-radius: 10px;
+border-radius: 10px;
+background-color: #CCC;
+
+}
+#contact{
+ width: 180px;
+  -moz-box-shadow: 0 0 6px #ccc;
+  -webkit-box-shadow: 0 0 6px #ccc;
+  box-shadow: 0 0 6px #ccc;
+padding-right: 15px;
 -moz-border-radius: 10px;
 -webkit-border-radius: 10px;
 border-radius: 10px;
-
+padding-bottom: 15px;
 }
 .html_carousel {
 	padding: 15px 0 15px 40px;
@@ -685,8 +699,8 @@ a.small {
 	width: 60px;
 	height: 70px;
 	position: absolute;
-	right: 105px;
-	top: 10px;
+	right: 15px;
+	top: 15px;
 	filter:alpha(opacity=50);
 	-moz-opacity:0.5;
 	-khtml-opacity: 0.5;
@@ -763,4 +777,25 @@ a.small {
 	width:570px;
 	height:270px;
 	display:block;
+}
+
+.logos_laterial {
+	position:absolute;
+	left: 60px;
+	bottom: 55%;
+
+}
+
+.contact_laterial {
+	position:absolute;
+	left: 30px;
+	bottom: 7%;
+}
+.offer_laterial {
+	position:absolute;
+	left: 30px;
+	bottom: 30%;
+}
+.white {
+	color: white; !important;
 }
