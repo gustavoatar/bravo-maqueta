@@ -9,7 +9,54 @@
  * 
  * ==|== normalize ==========================================================
  */
-@import url('http://bravo.rebien.es/sites/all/themes/bravo/css/font/stylesheet.css');
+
+@font-face {
+    font-family: 'ITCOfficinaSansStdBold';
+    src: url('officinasansstd-bold-webfont.eot');
+    src: url('officinasansstd-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('officinasansstd-bold-webfont.woff') format('woff'),
+         url('officinasansstd-bold-webfont.ttf') format('truetype'),
+         url('officinasansstd-bold-webfont.svg#ITCOfficinaSansStdBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ITCOfficinaSansStdBook';
+    src: url('officinasansstd-book-webfont.eot');
+    src: url('officinasansstd-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('officinasansstd-book-webfont.woff') format('woff'),
+         url('officinasansstd-book-webfont.ttf') format('truetype'),
+         url('officinasansstd-book-webfont.svg#ITCOfficinaSansStdBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ITCOfficinaSerifStdBold';
+    src: url('officinaserifstd-bold-webfont.eot');
+    src: url('officinaserifstd-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('officinaserifstd-bold-webfont.woff') format('woff'),
+         url('officinaserifstd-bold-webfont.ttf') format('truetype'),
+         url('officinaserifstd-bold-webfont.svg#ITCOfficinaSerifStdBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ITCOfficinaSerifStdBook';
+    src: url('officinaserifstd-book-webfont.eot');
+    src: url('officinaserifstd-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('officinaserifstd-book-webfont.woff') format('woff'),
+         url('officinaserifstd-book-webfont.ttf') format('truetype'),
+         url('officinaserifstd-book-webfont.svg#ITCOfficinaSerifStdBook') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 @import url('Free/stylesheet.css');
 
 @font-face {
@@ -317,7 +364,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: "Trebuc", Arial, Helvetica, sans-serif;
-	background-image: url('../img/logo_bravo_web_1.jpg');
+	background-image: url('/img/mancha_mkt.jpg');
 	background-repeat: no-repeat;	
 	height:100%;
 }
@@ -565,13 +612,31 @@ form p label { position: absolute; top: 6px; left: 6px;}
   box-shadow: 0 0 6px #ccc;
 padding-right: 15px;
 -moz-border-radius: 10px;
-padding-bottom: 15px;
-
+padding-bottom: 8px;
+background-color: #99CC66;
 -webkit-border-radius: 10px;
 border-radius: 10px;
-background-color: #CCC;
+
 
 }
+
+#offerb 
+{
+ 	width: 180px;
+  -moz-box-shadow: 0 0 6px #ccc;
+  -webkit-box-shadow: 0 0 6px #ccc;
+  box-shadow: 0 0 6px #ccc;
+padding-right: 15px;
+-moz-border-radius: 10px;
+padding-bottom: 8px;
+background-color: #000;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+background-image: url('/img/boton_bidi_fondo.jpg');
+
+
+}
+
 #contact{
  width: 180px;
   -moz-box-shadow: 0 0 6px #ccc;
@@ -583,6 +648,7 @@ padding-right: 15px;
 border-radius: 10px;
 padding-bottom: 15px;
 }
+
 .html_carousel {
 	padding: 15px 0 15px 40px;
 }
@@ -795,8 +861,77 @@ a.small {
 .offer_laterial {
 	position:absolute;
 	left: 30px;
+	bottom: 40%;
+}
+
+.offerb_laterial {
+	position:absolute;
+	left: 30px;
 	bottom: 30%;
 }
+
 .white {
 	color: white; !important;
 }
+
+.bigbold {
+	
+	
+	margin: 0; !important;
+	padding: 0; !important;
+	
+}
+.white a:link {
+	background: none;
+	border: none;
+	color: white;
+	text-decoration: none;
+	font-size: 18px; !important;
+	font-weight: bold; !important;
+}
+.mkt_menu_item {
+	position:relative; width: 260px; float:left; overflow-y: hidden; 
+}
+.mkt_menu_a { left: 20px; }
+.mkt_menu_b { left: 50px; }
+.mkt_menu_c { right: 0px; }
+.mkt_menu_text {
+	position: absolute; 
+	padding:5px;
+	background: #172983; 
+	color: white; 
+	font-size: 14px;
+	font-weight: bold;
+
+	bottom: 22px;
+	  -moz-box-shadow: 0 0 6px #ccc;
+	  -webkit-box-shadow: 0 0 6px #ccc;
+	  box-shadow: 0 0 6px #ccc;
+	padding-right: 15px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	
+}
+
+.arrow {
+height: 86px;
+width: 60px;
+position: absolute;
+background: url('/img/arrows.png') no-repeat;
+cursor: pointer;
+z-index: 900;
+top: 240px;
+}
+
+.previous {
+background-position: left top;
+left: 0;
+}
+
+.next {
+background-position: right top;
+right: 0;
+}
+
+

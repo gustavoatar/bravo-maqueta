@@ -1,0 +1,33 @@
+[07-Nov-2011 04:09:00] PHP Fatal error:  Call to undefined function  base_url() in /home/bravopub/public_html/prod/application/views/stage.php on line 280
+[07-Nov-2011 04:10:23] PHP Fatal error:  Call to undefined function  base_url() in /home/bravopub/public_html/prod/application/views/stage.php on line 280
+[07-Nov-2011 04:12:09] PHP Fatal error:  Call to undefined function  base_url() in /home/bravopub/public_html/prod/application/views/stage.php on line 280
+[07-Nov-2011 04:12:59] PHP Fatal error:  Call to a member function helper() on a non-object in /home/bravopub/public_html/prod/application/controllers/welcome.php on line 23
+[07-Nov-2011 04:28:38] PHP Fatal error:  Class 'Main_model' not found in /home/bravopub/public_html/prod/system/core/Loader.php on line 225
+[07-Nov-2011 04:29:51] PHP Fatal error:  Call to a member function get_content() on a non-object in /home/bravopub/public_html/prod/application/controllers/welcome.php on line 33
+[11-Nov-2011 04:29:30] PHP Fatal error:  Call to undefined method admin_model::delete_profile() in /home/bravopub/public_html/prod/application/controllers/admin.php on line 133
+[11-Nov-2011 04:29:31] PHP Fatal error:  Call to undefined method admin_model::delete_profile() in /home/bravopub/public_html/prod/application/controllers/admin.php on line 133
+[11-Nov-2011 04:29:49] PHP Fatal error:  Call to undefined method admin_model::delete_profile() in /home/bravopub/public_html/prod/application/controllers/admin.php on line 133
+[11-Nov-2011 04:29:51] PHP Fatal error:  Call to undefined method admin_model::delete_profile() in /home/bravopub/public_html/prod/application/controllers/admin.php on line 133
+[11-Nov-2011 04:29:53] PHP Fatal error:  Call to undefined method admin_model::delete_profile() in /home/bravopub/public_html/prod/application/controllers/admin.php on line 133
+[11-Nov-2011 04:29:53] PHP Fatal error:  Call to undefined method admin_model::delete_profile() in /home/bravopub/public_html/prod/application/controllers/admin.php on line 133
+[11-Nov-2011 04:31:15] PHP Fatal error:  Call to undefined method admin_model::delete_profile() in /home/bravopub/public_html/prod/application/controllers/admin.php on line 133
+[11-Nov-2011 04:32:02] PHP Fatal error:  Call to undefined method admin_model::delete_profile() in /home/bravopub/public_html/prod/application/controllers/admin.php on line 133
+[11-Nov-2011 05:54:17] PHP Fatal error:  Call to undefined method admin_model::get_email() in /home/bravopub/public_html/prod/application/controllers/admin.php on line 84
+[11-Nov-2011 05:55:27] PHP Fatal error:  Call to undefined method admin_model::get_profiles() in /home/bravopub/public_html/prod/application/controllers/admin.php on line 250
+[11-Nov-2011 09:59:38] PHP Fatal error:  Call to undefined method admin_model::get_filters() in /home/bravopub/public_html/prod/application/controllers/admin.php on line 316
+[11-Nov-2011 12:22:41] PHP Fatal error:  Call to undefined method admin_model::get_filters() in /home/bravopub/public_html/prod/application/controllers/admin.php on line 316
+[12-Nov-2011 10:34:00] PHP Fatal error:  Call to undefined method admin_model::get_filters() in /home/bravopub/public_html/prod/application/controllers/admin.php on line 316
+[12-Nov-2011 18:07:39] PHP Fatal error:  Call to undefined method admin_model::get_filters() in /home/bravopub/public_html/prod/application/controllers/admin.php on line 316
+[13-Nov-2011 05:42:50] PHP Fatal error:  Call to undefined method admin_model::get_filters() in /home/bravopub/public_html/prod/application/controllers/admin.php on line 316
+[14-Nov-2011 03:47:11] PHP Fatal error:  Call to undefined method main_model::get_interior() in /home/bravopub/public_html/prod/application/controllers/welcome.php on line 56
+[14-Nov-2011 04:38:02] PHP Fatal error:  Call to undefined method main_model::get_interior() in /home/bravopub/public_html/prod/application/controllers/welcome.php on line 84
+[14-Nov-2011 05:21:06] PHP Fatal error:  Call to undefined method main_model::get_interior() in /home/bravopub/public_html/prod/application/controllers/welcome.php on line 84
+[14-Nov-2011 07:20:08] PHP Fatal error:  Call to undefined method main_model::get_interior() in /home/bravopub/public_html/prod/application/controllers/welcome.php on line 84
+[14-Nov-2011 07:20:11] PHP Fatal error:  Call to undefined method main_model::get_interior() in /home/bravopub/public_html/prod/application/controllers/welcome.php on line 84
+[14-Nov-2011 07:20:17] PHP Fatal error:  Call to undefined method main_model::get_interior() in /home/bravopub/public_html/prod/application/controllers/welcome.php on line 84
+[14-Nov-2011 07:32:29] PHP Fatal error:  Call to undefined method main_model::get_interior() in /home/bravopub/public_html/prod/application/controllers/welcome.php on line 84
+[14-Nov-2011 07:34:33] PHP Fatal error:  Call to undefined method main_model::get_interior() in /home/bravopub/public_html/prod/application/controllers/welcome.php on line 84
+[14-Nov-2011 07:34:36] PHP Fatal error:  Call to undefined method main_model::get_interior() in /home/bravopub/public_html/prod/application/controllers/welcome.php on line 84
+[15-Nov-2011 10:57:10] PHP Fatal error:  Call to undefined method admin_model::get_sections() in /home/bravopub/public_html/prod/application/controllers/admin.php on line 238
+[15-Nov-2011 11:25:17] PHP Fatal error:  Call to undefined method admin_model::get_filters() in /home/bravopub/public_html/prod/application/controllers/admin.php on line 375
+[15-Nov-2011 11:28:47] PHP Fatal error:  Call to undefined method admin_model::updatesection() in /home/bravopub/public_html/prod/application/controllers/admin.php on line 193
