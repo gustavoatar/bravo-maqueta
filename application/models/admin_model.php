@@ -66,7 +66,15 @@ class admin_model extends CI_Model {
 		$query = $this->db->update('logos', $data); 
 		return $query;
     }
-    
+   
+   function update_slider_order($id, $weight)
+    {
+		$data = array('weight' => $weight);
+		$this->db->where('id', $id);
+		$query = $this->db->update('images', $data); 
+		return $query;
+    }
+	 
     function update_status($id, $weight)
     {
 		$data = array('weight' => $weight, 'active' => '1');
@@ -86,12 +94,17 @@ class admin_model extends CI_Model {
 	}
 	
 	
+    function delete($table, $record)
+    {
+        $query = $this->db->delete($table, array('id' => $record)); 
+        return $query;
+    }
+
     function delete_filter($id)
     {
         $query = $this->db->delete('tags', array('id' => $id)); 
         return $query;
     }
-
 
     function delete_admin_users($id)
     {
@@ -101,10 +114,22 @@ class admin_model extends CI_Model {
 
 
 
-	function create_tag() 
+	function insert_logo($fpath, $fname) 
 	{
-		$data = array('name' => $this->input->post("name"));
-		$this->db->insert('tags', $data); 
+		$data = array('path' => $fpath,
+		 			  'name' => $fname
+					 );
+					 
+		$this->db->insert('logos', $data); 
+	}
+	
+	function insert_image($a, $b) 
+	{
+		$data = array('sid' => $b,
+		 			  'path' => $a
+					 );
+					 
+		$this->db->insert('images', $data); 
 	}
 	
 	function get_email($email="")

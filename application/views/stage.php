@@ -11,6 +11,10 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="<?=base_url()?>js/libs/jquery-1.6.2.min.js"><\/script>')</script>
   <!-- scripts concatenated and minified via ant build script-->
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+  <script src="http://jquery-ui.googlecode.com/svn/trunk/ui/i18n/jquery.ui.datepicker-es.js" type="text/javascript"></script>
+
+
 
   <script src="<?=base_url()?>js/libs/slides.jquery.js"></script>
   <script src="<?=base_url()?>js/libs/jquery.jcarousel.js"></script>
@@ -58,17 +62,16 @@
 			});
 		}
 		
-		
+		$("#datepicker").datepicker();
 		$("a#gocontact").fancybox({'overlayShow'	:	false});
 		$("#slider1 a").fancybox({
-			
 			'transitionIn'	:	'elastic',
-		'transitionOut'	:	'elastic',
-		'speedIn'		:	600,
-		'height'		: 	450,
-		'width'			: 	750,
-		'speedOut'		:	200, 
-		'overlayShow'	:	false
+			'transitionOut'	:	'elastic',
+			'speedIn'		:	600,
+			'height'		: 	450,
+			'width'			: 	750,
+			'speedOut'		:	200, 
+			'overlayShow'	:	false
 		});
 	});
 	
@@ -164,6 +167,7 @@ $(function(){
   <link rel="stylesheet" href="<?=base_url()?>css/skins/tango/skin.css">
   <link rel="stylesheet" href="<?=base_url()?>css/bx_styles/bx_styles.css">
   <link rel="stylesheet" href="<?=base_url()?>js/fancybox/jquery.fancybox-1.3.4.css">
+  <link rel="stylesheet" href="<?=base_url()?>css/custom-theme/jquery-ui-1.8.16.custom.css" type="text/css" media="screen" />
   <link rel="stylesheet" href="<?=base_url()?>css/style.css">
 
 <style>
@@ -252,7 +256,7 @@ showSplash();
 				<div style="display:none;">
 				<div id="contact_form">
 					<form id="formtoserialize">
-						<h2>Envianos su consulta</h2>
+						<h2>Envíenos su consulta</h2>
 						<fieldset>
 							<p>
 								<label for="name">Su nombre</label>
@@ -265,6 +269,10 @@ showSplash();
 							<p>
 								<label for="message">Su mensaje</label>
 								<textarea name="message" rows="8" id="message"></textarea>
+							</p>
+							<p>
+								<label for="cita">Concierte su cita</label>
+								<div id="datepicker"></div>
 							</p>
 							<p>
 								<input type="submit" value="Enviar" name="sendcontact" id="sendcontact" class="button big white"/>
@@ -288,32 +296,37 @@ showSplash();
 			<div class="slides_container">		
 				<div class="slides_container_size" id="content_agencia">
 					
-					<?=$content_agencia->html?>
+					<?php echo $content_agencia->html; ?>
 					
 				</div>
 
 				<div class="slides_container_size" id="content_marketing">
-					<?=$content_marketing->html?>
+					
+					<?php echo $content_marketing->html; ?>
 				</div>
 				
 				
 				<div class="slides_container_size" id="content_creatividad">
-					<?=$content_creatividad->html?>
+					
+					<?php echo $content_creatividad->html; ?>
 				</div>
 				
 				
 				<div class="slides_container_size" id="content_medios">
-					<?=$content_medios->html?>
+					
+					<?php echo $content_medios->html; ?>
 				</div>
 				
 				
 				<div class="slides_container_size" id="content_exterior">
-					<?=$content_exterior->html?>
+					
+					<?php echo $content_exterior->html; ?>
 				</div>
 				
 				
 				<div class="slides_container_size" id="content_online">
-					<?=$content_online->html?>
+					
+					<?php echo $content_online->html; ?>
 				</div>
 				
 			</div>

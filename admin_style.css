@@ -220,9 +220,14 @@ a:active {
 
 	div#header .main-nav-link.selected {
 		background-color: #e6e6e6;
-		color: white;
+		color: #414869;
 	}
 
+	div#header .main-nav-link.selected:hover {
+		background-color: #414869;
+		color: #e6e6e6;
+	}
+	
 	div#header .main-nav-link:hover, div#header .main-nav-link:active, div#header .main-nav-link:focus {
 		background-color: #414869;
 	}
@@ -290,4 +295,9 @@ label {
 	margin-bottom: 6px;
 	padding-bottom: 1px;
 	margin-top: 16px;
+}
+
+div.highlight tr.over td, tr:hover td, tr:hover a, tr.over a, tr:hover a:link {
+	background-color: #e6e6e6;
+	color: #414869;
 }

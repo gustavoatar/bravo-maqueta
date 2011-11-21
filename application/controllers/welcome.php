@@ -50,9 +50,12 @@ class Welcome extends CI_Controller {
 		
 	}
 	
-	public function principal()
+	public function principal($name)
 	{
-		
+
+		$data['section'] = $name;
+
+
 		$data['principal'] 	= $this->main_model->get_content($name);
 		$this->load->view('pages/principal', $data);	
 	}

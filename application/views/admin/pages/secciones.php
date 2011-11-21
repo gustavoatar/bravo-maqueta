@@ -83,24 +83,24 @@ $(function() {
 	});
 	
 /*]]>*/</script>
-<button id="create-filter" class="right">Crear seccion</button>
+
 <h1>Secciones</h1>
 <div style="height:20px;"></div>
 <table width="99%" class="rows" style="margin-left: 15px;"  border="0" cellspacing="0" id="highlight">
   <tr>
     <th>Nombre de seccion</th>
-    <th class="left">Operacion</th>
+    <th class="right">Accion</th>
   </tr>
 <?php foreach ($result as $f): ?>
   <tr class="topbottom">
     <td><?=$f->vanity?></td>
-    <td class="left"><a href="/index.php/admin/secciones/edit/<?=$f->id?>">Editar</a> / <span class="delete"><a href="#" rel="<?=$f->id?>"> Eliminar</a></span> </td>
+    <td class="right"><a href="/index.php/admin/secciones/edit/<?=$f->id?>">Editar</a> </td>
   </tr>
 <?php endforeach; ?>
 </table>
 
 
-<div id="dialog-form" title="Add new video filter">
+<div id="dialog-form" title="Crear nueva seccion">
 	<p class="validateTips">Todos los campos obligados</p>
 	<form name="new_filter" id="new_filter">
 	<fieldset>
